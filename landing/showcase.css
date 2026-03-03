@@ -585,12 +585,9 @@ body {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 900px) {
-  .sc-charts-grid { grid-template-columns: 1fr; }
-}
-
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
+  .sc-charts-grid { grid-template-columns: 1fr; }
   #particle-canvas { display: none; }
 
   .sc-sidebar {
