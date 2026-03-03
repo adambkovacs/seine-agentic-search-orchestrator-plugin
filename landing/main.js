@@ -64,6 +64,7 @@ heroTl
   .to('.hero-tagline', { opacity: 1, y: 0, duration: 0.8 }, '-=0.4')
   .to('.scroll-hint', { opacity: 1, duration: 1 }, '-=0.2');
 
+
 // Fade out hero on scroll
 gsap.to('.hero-inner', {
   opacity: 0,
