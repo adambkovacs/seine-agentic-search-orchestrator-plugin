@@ -274,12 +274,21 @@ body {
   color: var(--accent);
   vertical-align: super;
   margin: 0 0.05rem;
-  cursor: default;
-  transition: text-shadow 0.3s;
+  cursor: pointer;
+  transition: text-shadow 0.3s, color 0.2s;
 }
 
 .cite:hover {
   text-shadow: 0 0 6px rgba(99, 179, 237, 0.5);
+  color: #90CDF4;
+}
+
+/* Highlight target source when jumped to */
+.sc-source:target {
+  background: rgba(99, 179, 237, 0.08);
+  border-left: 3px solid var(--accent);
+  padding-left: calc(0.75rem - 3px);
+  transition: background 0.4s, border-color 0.4s;
 }
 
 /* ---- Evidence badges with glow ---- */

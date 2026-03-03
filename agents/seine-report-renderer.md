@@ -173,11 +173,68 @@ If a gate file contains `"verdict": "FAIL"`:
 1. **Sidebar** — TOC with smooth-scroll links. Badges: depth, agent count, duration, gate status.
 2. **Hero** — Query title (large), depth subtitle, stat cards (agents, duration, sources, mean confidence, gate status).
 3. **Executive summary** — Synthesized from findings. Plain prose. No charts.
-4. **Findings** — Per-topic sections with prose, inline `[N]` citations, confidence badges (`[SOLID]` green / `[SOFT]` amber / `[SHAKY]` red), small inline confidence bar per finding.
-5. **Charts dashboard** — 2-column responsive grid. Always: confidence bars (full width), evidence doughnut, source quality doughnut, pipeline gantt. Auto-detected charts below.
-6. **Sources** — Numbered table: #, Title (linked), Trust Tier (colored badge), Cited By, Retrieved.
+4. **Findings** — Per-topic sections with prose, inline `[N]` citations as clickable links (see Clickable Citations below), confidence badges (`[SOLID]` green / `[SOFT]` amber / `[SHAKY]` red), small inline confidence bar per finding.
+5. **Charts dashboard** — 2-column responsive grid. Always: confidence bars (full width), evidence doughnut, source quality doughnut, pipeline gantt. Auto-detected charts below. Each canvas MUST be in a dedicated wrapper div (see Chart Container Requirements below).
+6. **Sources** — Numbered list. Each entry has `id="source-N"`: #, Title (linked), Trust Tier (colored badge), Cited By, Retrieved.
 7. **Pipeline timeline** — Horizontal gantt with phase bars, agent sub-bars, gate markers.
 8. **Footer** — "Seine Agentic Search Orchestrator · {depth} · {date}" + seinesearch.com link.
+
+## Clickable Citations
+
+Inline citations MUST be anchor tags linking to source entries:
+
+```html
+<!-- In findings prose: -->
+<a href="#source-1" class="cite">[1]</a>
+
+<!-- In sources section — each entry gets an id: -->
+<div class="source" id="source-1">
+  <span class="source-num">[1]</span>
+  <a href="https://..." target="_blank" rel="noopener">Title</a>
+  <span class="trust trust-high">HIGH</span>
+</div>
+```
+
+CSS for `.cite`: `cursor: pointer; color: var(--accent); vertical-align: super; font-size: 0.65rem; font-family: 'JetBrains Mono', monospace; text-decoration: none;`
+
+Add a `:target` highlight so the jumped-to source flashes:
+
+```css
+.source:target {
+  background: rgba(99, 179, 237, 0.08);
+  border-left: 3px solid var(--accent);
+  transition: background 0.4s;
+}
+```
+
+## Chart Container Requirements
+
+Chart.js responsive mode (`responsive: true, maintainAspectRatio: false`) requires the canvas parent to be a dedicated div with `position: relative` and an explicit CSS height. Without this, canvases collapse to 0px.
+
+```html
+<!-- CORRECT: dedicated wrapper with explicit height -->
+<div class="chart-card">
+  <h3 class="chart-title">Confidence scores</h3>
+  <div class="chart-wrap chart-wrap--tall"><canvas id="chart-confidence"></canvas></div>
+</div>
+
+<!-- WRONG: canvas as sibling of h3 with no wrapper -->
+<div class="chart-card">
+  <h3>Confidence</h3>
+  <canvas id="chart-confidence" height="400"></canvas>
+</div>
+```
+
+CSS:
+```css
+.chart-wrap { position: relative; width: 100%; height: 250px; }
+.chart-wrap--tall { height: 400px; }
+.chart-wrap--short { height: 200px; }
+```
+
+Use `--tall` (400px) for the full-width confidence bar chart. Use default (250px) for doughnuts and grouped bars. Use `--short` (200px) for timelines and small bars.
+
+All charts MUST use `maintainAspectRatio: false` — do not omit it.
 
 ## Critical Rules
 
@@ -185,5 +242,7 @@ If a gate file contains `"verdict": "FAIL"`:
 - **NEVER use external JS** — Chart.js MUST be bundled inline (Google Fonts CSS link is the only external resource)
 - **ALWAYS use evidence labels exactly** — SOLID/SOFT/SHAKY/UNKNOWN, never paraphrase
 - **ALWAYS handle partial pipelines** — render what exists, show FAIL indicators
+- **ALWAYS use clickable citations** — `<a href="#source-N" class="cite">[N]</a>`, never plain `<span>`
+- **ALWAYS wrap canvases** — dedicated `.chart-wrap` div with explicit CSS height
 - **File size target** — under 500KB total (Chart.js ~200KB + content ~100-300KB)
 - **Must work as `file://`** — no CORS, no fetch, no external JS
