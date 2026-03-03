@@ -1,0 +1,11 @@
+{
+  "name": "seine",
+  "description": "Multi-domain search orchestration with deliberative council consensus, phased research, and humanized output. 20 agents, 3 skills, 4 public domains.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Adam Kovacs"
+  },
+  "homepage": "https://github.com/adambkovacs/seine-agentic-search-orchestrator-plugin",
+  "repository": "https://github.com/adambkovacs/seine-agentic-search-orchestrator-plugin",
+  "license": "MIT"
+}
