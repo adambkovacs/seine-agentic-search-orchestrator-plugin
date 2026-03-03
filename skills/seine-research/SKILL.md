@@ -234,3 +234,18 @@ Timeline schema:
 ```
 
 Each phase entry records ISO 8601 timestamps for `started` and `completed`. Gate entries include the `verdict`. The `total_duration_seconds` is the wall-clock time from Phase A start to source compilation completion.
+
+---
+
+## HTML Dossier Rendering (after Timeline, ADR-S017)
+
+When `artifact_dir` is provided, spawn the report renderer to generate an interactive HTML dossier:
+
+```javascript
+Agent({ subagent_type: "seine-report-renderer", model: "sonnet",
+        prompt: "Artifact directory: {artifact_dir}\n\nRead all JSON files in the artifact directory (00-query.json through 08-timeline.json, skip missing). Auto-detect chartable data from the findings. Generate a self-contained HTML dossier with Chart.js charts bundled inline. Write the output to {artifact_dir}/09-dossier.html." })
+```
+
+This step runs even on partial pipelines (gate FAIL). The renderer handles missing phases — it renders whatever data exists and shows FAIL indicators for stopped gates.
+
+Output: `{artifact_dir}/09-dossier.html`
