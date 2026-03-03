@@ -244,14 +244,14 @@ flowchart TD
     renderer → humanizer"]
     OUT --> FINAL["research/final/{slug}.md"]
 
-    style Q fill:#4A90D9,color:#fff
-    style F fill:#7B68EE,color:#fff
-    style T fill:#FF8C00,color:#fff
-    style C1 fill:#9B59B6,color:#fff
-    style C2 fill:#9B59B6,color:#fff
-    style RP fill:#E74C3C,color:#fff
-    style OUT fill:#2ECC71,color:#fff
-    style FINAL fill:#27AE60,color:#fff
+    style Q fill:#1E3A8A,color:#fff
+    style F fill:#5B21B6,color:#fff
+    style T fill:#B45309,color:#fff
+    style C1 fill:#6B21A8,color:#fff
+    style C2 fill:#6B21A8,color:#fff
+    style RP fill:#991B1B,color:#fff
+    style OUT fill:#15803D,color:#fff
+    style FINAL fill:#166534,color:#fff
 ```
 
 ### Depth Activation
@@ -340,15 +340,15 @@ graph TD
     SYN & CON & LAT & SRC & PAT & BLI & TEM --> V{"Synthesis
     pass / flag"}
 
-    style QUERY fill:#4A90D9,color:#fff
-    style SYN fill:#3498DB,color:#fff
-    style CON fill:#E74C3C,color:#fff
-    style LAT fill:#F39C12,color:#fff
-    style SRC fill:#1ABC9C,color:#fff
-    style PAT fill:#9B59B6,color:#fff
-    style BLI fill:#E67E22,color:#fff
-    style TEM fill:#2ECC71,color:#fff
-    style V fill:#34495E,color:#fff
+    style QUERY fill:#1E3A8A,color:#fff
+    style SYN fill:#1E40AF,color:#fff
+    style CON fill:#991B1B,color:#fff
+    style LAT fill:#B45309,color:#fff
+    style SRC fill:#115E59,color:#fff
+    style PAT fill:#6B21A8,color:#fff
+    style BLI fill:#9A3412,color:#fff
+    style TEM fill:#15803D,color:#fff
+    style V fill:#1E293B,color:#fff
 ```
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for full agent schemas, output format, and research agent JSON envelope specification.
