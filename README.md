@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/version-1.0.0-green.svg" alt="Version 1.0.0">
   <img src="https://img.shields.io/badge/agents-20-purple.svg" alt="20 Agents">
   <img src="https://img.shields.io/badge/council_members-7-orange.svg" alt="7 Council Members">
-  <img src="https://img.shields.io/badge/domains-9-0D9488.svg" alt="9 Domains">
+  <img src="https://img.shields.io/badge/domains-4-0D9488.svg" alt="4 Domains">
   <img src="https://img.shields.io/badge/depth_levels-5-red.svg" alt="5 Depth Levels">
 </p>
 
@@ -20,7 +20,7 @@
   <img src="https://img.shields.io/badge/platform-Claude_Cowork-5A67D8.svg" alt="Claude Cowork">
   <img src="https://img.shields.io/badge/dependencies-zero-brightgreen.svg" alt="Zero Dependencies">
   <img src="https://img.shields.io/badge/API_keys-none_required-brightgreen.svg" alt="No API Keys">
-  <img src="https://img.shields.io/badge/OSINT_adapters-12-1E3A5F.svg" alt="12 OSINT Adapters">
+  <img src="https://img.shields.io/badge/OSINT_query_patterns-13-1E3A5F.svg" alt="13 OSINT Query Patterns">
   <img src="https://img.shields.io/badge/search_rounds-up_to_10-D97706.svg" alt="Search Rounds: Up to 10">
 </p>
 
@@ -511,12 +511,14 @@ See [agents/seine-kb/SEARCH-CRAFT.md](agents/seine-kb/SEARCH-CRAFT.md) for the s
 |--------|-------------|--------|---------|
 | **web** | General web search | `WebSearch` | Any web content |
 | **academic** | Academic papers | `WebSearch` + site qualifiers | arXiv, DBLP, Semantic Scholar |
-| **osint** | Open-source intelligence | `WebSearch` + specialized queries | EDGAR, OpenCorporates, Wikidata, LittleSis, OFAC, FEC, and more |
+| **osint** | Open-source intelligence | `WebSearch` + `site:` targeting | SEC/EDGAR, OpenCorporates, Wikidata, OFAC via site-restricted queries |
 | **social** | Social media | `WebSearch` + platform targeting | Twitter/X, Reddit, LinkedIn |
+
+All OSINT queries run through Claude Code's built-in `WebSearch` with `site:` restriction patterns (e.g. `site:sec.gov` for EDGAR filings, `site:arxiv.org` for papers). There are no external API keys or direct database connections.
 
 The search craft knowledge base ([`agents/seine-kb/SEARCH-CRAFT.md`](agents/seine-kb/SEARCH-CRAFT.md)) includes:
 - Boolean operators and exact phrase matching
-- Site-restriction patterns for 13 OSINT sub-adapters
+- Site-restriction query patterns for 13 OSINT sources (EDGAR, OpenCorporates, Wikidata, LittleSis, OFAC, FEC, CompaniesHouse, CANDID, court records, patents, news archives, sanctions, property)
 - Counter-evidence query construction
 - Query expansion strategies and synonym tables
 - WebFetch best practices and limitations
