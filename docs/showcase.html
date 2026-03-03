@@ -80,9 +80,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./main.DN_HwZC_.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  <script type="module" crossorigin src="./main.B9ZBmGjD.js"></script>
   <link rel="modulepreload" crossorigin href="./chunks/particles.DtZgSRQA.js">
-  <link rel="stylesheet" crossorigin href="./assets/showcase.gmlZbfEC.css">
+  <link rel="stylesheet" crossorigin href="./assets/showcase.CC2VciDr.css">
 </head>
 <body>
 
@@ -101,6 +102,7 @@
     <li><a href="#comparative" class="sc-nav-link">Comparative</a></li>
     <li><a href="#gaps" class="sc-nav-link">What We Don't Know</a></li>
     <li><a href="#scores" class="sc-nav-link">Confidence Scores</a></li>
+    <li><a href="#charts" class="sc-nav-link">Charts</a></li>
     <li><a href="#sources" class="sc-nav-link">Sources</a></li>
     <li><a href="#timeline" class="sc-nav-link">Pipeline Timeline</a></li>
   </ul>
@@ -320,6 +322,42 @@
         <tr><td>SME compliance cost $8-15M</td><td><span class="ev ev-shaky">SHAKY</span></td><td class="sc-conf-score">0.393</td><td class="sc-conf-count">0</td></tr>
       </tbody>
     </table>
+  </section>
+
+  <!-- ============ CHARTS ============ -->
+  <section id="charts" class="sc-section sc-reveal">
+    <span class="sc-section-label">Visual Analysis</span>
+    <h2 class="sc-h2">Data Visualizations</h2>
+    <div class="sc-charts-grid">
+      <div class="sc-chart-card">
+        <h3 class="sc-chart-title">Confidence scores</h3>
+        <canvas id="chart-confidence" height="400"></canvas>
+      </div>
+      <div class="sc-chart-card">
+        <h3 class="sc-chart-title">Evidence strength</h3>
+        <canvas id="chart-evidence" height="250"></canvas>
+      </div>
+      <div class="sc-chart-card">
+        <h3 class="sc-chart-title">Source quality</h3>
+        <canvas id="chart-sources" height="250"></canvas>
+      </div>
+      <div class="sc-chart-card">
+        <h3 class="sc-chart-title">Pipeline execution</h3>
+        <canvas id="chart-pipeline" height="200"></canvas>
+      </div>
+      <div class="sc-chart-card">
+        <h3 class="sc-chart-title">EU enforcement timeline</h3>
+        <canvas id="chart-eu-timeline" height="200"></canvas>
+      </div>
+      <div class="sc-chart-card">
+        <h3 class="sc-chart-title">Penalty structure</h3>
+        <canvas id="chart-penalties" height="250"></canvas>
+      </div>
+      <div class="sc-chart-card">
+        <h3 class="sc-chart-title">Compute thresholds (FLOPs)</h3>
+        <canvas id="chart-compute" height="200"></canvas>
+      </div>
+    </div>
   </section>
 
   <!-- ============ SOURCES ============ -->
