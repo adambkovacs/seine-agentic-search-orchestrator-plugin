@@ -552,6 +552,236 @@ body {
   word-break: break-word;
 }
 
+/* ---- Output Showcase Section ---- */
+.output-card {
+  background: linear-gradient(135deg, rgba(10,10,18,0.95), rgba(18,18,30,0.95));
+  border: 1px solid rgba(99, 179, 237, 0.12);
+  border-radius: 12px;
+  padding: 2rem;
+  font-size: 0.875rem;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.output-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 1.5rem;
+}
+
+.output-meta-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.output-meta-key {
+  color: var(--text-muted);
+  margin-right: 0.25rem;
+}
+
+.output-meta-sep {
+  color: var(--text-muted);
+  font-size: 0.6rem;
+}
+
+.output-meta-fail {
+  color: var(--shaky);
+}
+
+.output-meta-note {
+  color: var(--text-muted);
+  font-size: 0.65rem;
+}
+
+.output-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.output-agg {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.output-excerpt {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.output-excerpt p {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.output-excerpt p:last-child {
+  margin-bottom: 0;
+}
+
+.cite {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  vertical-align: super;
+  margin: 0 0.05rem;
+}
+
+.evidence {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  margin-left: 0.15rem;
+  white-space: nowrap;
+}
+
+.ev-solid {
+  color: var(--solid);
+  background: rgba(72, 187, 120, 0.1);
+  border: 1px solid rgba(72, 187, 120, 0.2);
+}
+
+.ev-soft {
+  color: var(--soft);
+  background: rgba(236, 201, 75, 0.1);
+  border: 1px solid rgba(236, 201, 75, 0.2);
+}
+
+.ev-shaky {
+  color: var(--shaky);
+  background: rgba(245, 101, 101, 0.1);
+  border: 1px solid rgba(245, 101, 101, 0.2);
+}
+
+.output-confidence {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.output-conf-header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.output-conf-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.4rem 0;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.output-conf-claim {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.output-conf-score {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text);
+  min-width: 3rem;
+  text-align: right;
+}
+
+.output-sources {
+  margin-bottom: 1.25rem;
+}
+
+.output-sources-label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.output-source {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  padding: 0.25rem 0;
+}
+
+.output-trust {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+  margin-left: 0.5rem;
+}
+
+.trust-high {
+  color: var(--solid);
+  background: rgba(72, 187, 120, 0.08);
+}
+
+.trust-med {
+  color: var(--soft);
+  background: rgba(236, 201, 75, 0.08);
+}
+
+.output-footer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+@media (max-width: 768px) {
+  .output-card {
+    padding: 1.25rem;
+  }
+
+  .output-meta {
+    gap: 0.35rem;
+  }
+
+  .output-conf-row {
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+  }
+
+  .output-conf-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .output-conf-score {
+    display: none;
+  }
+
+  .output-conf-header span:last-child {
+    display: none;
+  }
+}
+
 /* ---- Convergence Section ---- */
 .convergence-inner {
   text-align: center;
