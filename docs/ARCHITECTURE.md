@@ -36,15 +36,15 @@ flowchart TD
     OUT["Output Layer · dig+
     renderer → humanizer"] --> FINAL["research/final/{slug}.md"]
 
-    style Q fill:#4A90D9,color:#fff
-    style F fill:#7B68EE,color:#fff
-    style T fill:#FF8C00,color:#fff
-    style C1 fill:#9B59B6,color:#fff
-    style C2 fill:#9B59B6,color:#fff
-    style RP fill:#E74C3C,color:#fff
-    style SG fill:#B71C1C,color:#fff
-    style OUT fill:#2ECC71,color:#fff
-    style FINAL fill:#27AE60,color:#fff
+    style Q fill:#1E3A8A,color:#fff
+    style F fill:#5B21B6,color:#fff
+    style T fill:#B45309,color:#fff
+    style C1 fill:#6B21A8,color:#fff
+    style C2 fill:#6B21A8,color:#fff
+    style RP fill:#991B1B,color:#fff
+    style SG fill:#7F1D1D,color:#fff
+    style OUT fill:#15803D,color:#fff
+    style FINAL fill:#166534,color:#fff
 ```
 
 ## Depth Behavior
@@ -211,6 +211,6 @@ graph TD
 
     ROOT -.-> FINAL["research/final/{slug}.md"]
 
-    style ROOT fill:#34495E,color:#fff
-    style FINAL fill:#27AE60,color:#fff
+    style ROOT fill:#1E293B,color:#fff
+    style FINAL fill:#166534,color:#fff
 ```
