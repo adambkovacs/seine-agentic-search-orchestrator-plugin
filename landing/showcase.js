@@ -85,6 +85,20 @@ navLinks.forEach((link) => {
 });
 
 // ============================================================
+// Clickable citations — [N] scrolls to #source-N
+// ============================================================
+document.querySelectorAll('.cite').forEach((cite) => {
+  const m = cite.textContent.match(/\[(\d+)\]/);
+  if (!m) return;
+  cite.setAttribute('role', 'link');
+  cite.setAttribute('aria-label', `Source ${m[1]}`);
+  cite.addEventListener('click', () => {
+    const target = document.getElementById(`source-${m[1]}`);
+    if (target) lenis.scrollTo(target, { offset: -80 });
+  });
+});
+
+// ============================================================
 // GSAP Scroll Animations
 // ============================================================
 
