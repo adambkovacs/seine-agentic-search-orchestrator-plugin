@@ -114,6 +114,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0;
 }
 
@@ -122,7 +123,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
-  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 50%, var(--drill) 100%);
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 60%, #90CDF4 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -151,12 +152,22 @@ body {
 
 .scroll-hint {
   position: absolute;
-  bottom: 3rem;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .scroll-hint {
+    display: none;
+  }
 }
 
 .scroll-hint-text {
@@ -284,9 +295,14 @@ body {
 /* ---- Council Section ---- */
 .council-ring {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 1rem;
+}
+
+/* Center the orphan 7th card */
+.council-member:last-child {
+  grid-column: 2 / 3;
 }
 
 .council-member {
@@ -449,7 +465,7 @@ body {
   height: 8px;
   background: var(--bg-subtle);
   border-radius: 4px;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 }
 
@@ -460,6 +476,7 @@ body {
   border-radius: 4px;
   box-shadow: 0 0 16px color-mix(in srgb, var(--bar-color) 40%, transparent);
   transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
 .evidence-score {
@@ -707,6 +724,10 @@ body {
 
   .council-ring {
     grid-template-columns: 1fr;
+  }
+
+  .council-member:last-child {
+    grid-column: auto;
   }
 
   .research-phases {

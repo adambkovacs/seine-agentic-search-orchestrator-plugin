@@ -88,18 +88,28 @@ ScrollTrigger.create({
   once: true,
 });
 
-// Animate stat numbers
+// Animate stat numbers (only numeric ones, skip "?")
 ScrollTrigger.create({
   trigger: '.problem-stats',
   start: 'top 80%',
   onEnter: () => {
-    gsap.from('.stat-number', {
-      textContent: 0,
-      duration: 1.5,
-      snap: { textContent: 1 },
-      stagger: 0.2,
-      ease: 'power2.out',
-      // Only animate numeric ones
+    document.querySelectorAll('.stat-number').forEach((el, i) => {
+      const val = el.textContent.trim();
+      if (!isNaN(val) && val !== '') {
+        gsap.from(el, {
+          textContent: 0,
+          duration: 1.5,
+          snap: { textContent: 1 },
+          delay: i * 0.2,
+          ease: 'power2.out',
+        });
+      } else {
+        // Non-numeric (like "?") - just fade in with a pulse
+        gsap.fromTo(el,
+          { scale: 0.5, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.8, delay: i * 0.2, ease: 'back.out(1.7)' }
+        );
+      }
     });
   },
   once: true,
