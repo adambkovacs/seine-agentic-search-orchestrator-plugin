@@ -167,6 +167,11 @@ body {
   transform: translateY(20px);
 }
 
+.deep-paren {
+  color: var(--accent);
+  font-weight: 400;
+}
+
 .scroll-hint {
   position: absolute;
   bottom: 1.5rem;
@@ -549,26 +554,7 @@ body {
   transform: scale(0.9);
 }
 
-.convergence-pulse {
-  width: 16px;
-  height: 16px;
-  background: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 40px var(--accent), 0 0 80px color-mix(in srgb, var(--accent) 50%, transparent);
-  animation: pulse 2s ease-in-out infinite;
-  opacity: 0;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 20px var(--accent), 0 0 40px color-mix(in srgb, var(--accent) 30%, transparent);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 0 60px var(--accent), 0 0 120px color-mix(in srgb, var(--accent) 50%, transparent);
-    transform: scale(1.3);
-  }
-}
+/* convergence-pulse removed — particles ARE the dot now */
 
 /* ---- Install Section ---- */
 #install {
@@ -789,9 +775,7 @@ body {
   .scroll-hint-line {
     animation: none;
   }
-  .convergence-pulse {
-    animation: none;
-  }
+  /* convergence-pulse removed */
 }
 
 /* ---- Selection color ---- */
