@@ -123,12 +123,29 @@ body {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
-  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 60%, #90CDF4 100%);
+  background: linear-gradient(
+    120deg,
+    #2B6CB0 0%,
+    #4299E1 20%,
+    #90CDF4 35%,
+    #E2E8F0 50%,
+    #90CDF4 65%,
+    #4299E1 80%,
+    #2B6CB0 100%
+  );
+  background-size: 300% auto;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: waterFlow 6s ease-in-out infinite;
   opacity: 0;
   transform: translateY(30px);
+}
+
+@keyframes waterFlow {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
 }
 
 .hero-subtitle {
@@ -642,6 +659,7 @@ body {
   padding: 0.15rem 0.4rem;
   border-radius: 3px;
   font-size: 0.8rem;
+  color: #A0AEC0;
 }
 
 .install-badges {
@@ -679,7 +697,7 @@ body {
 
 .footer-credit {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--text-dim);
   padding-top: 2rem;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
@@ -759,6 +777,20 @@ body {
   .evidence-label-container {
     flex-direction: column;
     gap: 0.25rem;
+  }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title {
+    animation: none;
+    filter: none;
+  }
+  .scroll-hint-line {
+    animation: none;
+  }
+  .convergence-pulse {
+    animation: none;
   }
 }
 
