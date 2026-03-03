@@ -257,6 +257,9 @@ function initCharts() {
   Chart.defaults.color = TEXT_DIM;
   Chart.defaults.font.family = "'Inter', sans-serif";
   Chart.defaults.font.size = 11;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    Chart.defaults.animation = false;
+  }
 
   // --- 1. Confidence Scores (horizontal bar, full width) ---
   const confData = [
@@ -342,6 +345,7 @@ function initCharts() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       cutout: '55%',
       plugins: {
         legend: {
@@ -367,6 +371,7 @@ function initCharts() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       cutout: '55%',
       plugins: {
         legend: {
@@ -516,6 +521,7 @@ function initCharts() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           position: 'bottom',
@@ -532,10 +538,7 @@ function initCharts() {
       },
       scales: {
         x: { grid: { display: false } },
-        y: {
-          grid: { color: GRID },
-          ticks: { callback: (v) => v + (v > 10 ? 'M' : '%') }
-        }
+        y: { grid: { color: GRID } }
       }
     }
   });
@@ -590,8 +593,15 @@ ScrollTrigger.create({
       duration: 0.9,
       ease: 'power3.out',
     });
-    // Small delay to let section reveal before charts animate
-    setTimeout(initCharts, 300);
+    // Wait for section reveal, then init charts (with CDN load fallback)
+    setTimeout(() => {
+      if (typeof Chart !== 'undefined') {
+        initCharts();
+      } else {
+        const cdnScript = document.querySelector('script[src*="chart.js"]');
+        if (cdnScript) cdnScript.addEventListener('load', initCharts, { once: true });
+      }
+    }, 300);
   },
   once: true,
 });
