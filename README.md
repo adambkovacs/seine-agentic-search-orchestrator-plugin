@@ -85,42 +85,18 @@ Every claim carries a `[N]` source link. Council members who challenged a findin
 ### Depth Activation
 
 ```mermaid
-%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#2D3748', 'primaryTextColor': '#E2E8F0', 'primaryBorderColor': '#4A5568', 'lineColor': '#718096', 'secondaryColor': '#1A202C', 'tertiaryColor': '#2D3748', 'noteTextColor': '#E2E8F0', 'noteBkgColor': '#2D3748'}}}%%
-block-beta
-  columns 5
-  block:skim:1
-    columns 1
-    s1["skim"]
-    s2["Route + Fuse"]
-  end
-  block:scan:1
-    columns 1
-    t1["scan"]
-    t2["Triage Gate"]
-  end
-  block:dig:1
-    columns 1
-    d1["dig"]
-    d2["Council R1/R2"]
-  end
-  block:drill:1
-    columns 1
-    r1["drill"]
-    r2["Research Pipeline"]
-  end
-  block:siege:1
-    columns 1
-    g1["siege"]
-    g2["Multi-round Convergence"]
-  end
+%%{init: {'theme': 'dark', 'themeVariables': {'primaryColor': '#2D3748', 'primaryTextColor': '#E2E8F0', 'lineColor': '#718096'}}}%%
+graph LR
+  skim["<b>skim</b><br/>Route + Fuse"] --> scan["<b>scan</b><br/>Triage Gate"]
+  scan --> dig["<b>dig</b><br/>Council R1/R2"]
+  dig --> drill["<b>drill</b><br/>Research Pipeline"]
+  drill --> siege["<b>siege</b><br/>Multi-round Convergence"]
 
-  skim --> scan --> dig --> drill --> siege
-
-  style skim fill:#F6E05E,color:#1A202C
-  style scan fill:#FC8181,color:#1A202C
-  style dig fill:#63B3ED,color:#1A202C
-  style drill fill:#B794F4,color:#1A202C
-  style siege fill:#F687B3,color:#1A202C
+  style skim fill:#F6E05E,color:#1A202C,stroke:#D69E2E
+  style scan fill:#FC8181,color:#1A202C,stroke:#E53E3E
+  style dig fill:#63B3ED,color:#1A202C,stroke:#3182CE
+  style drill fill:#B794F4,color:#1A202C,stroke:#805AD5
+  style siege fill:#F687B3,color:#1A202C,stroke:#D53F8C
 ```
 
 ### Research Pipeline Phases
