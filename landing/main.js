@@ -258,12 +258,7 @@ ScrollTrigger.create({
       duration: 1.2,
       ease: 'power3.out',
     });
-    gsap.to('.convergence-pulse', {
-      opacity: 1,
-      duration: 0.8,
-      delay: 0.6,
-      ease: 'power2.out',
-    });
+    // particles converge into the dot — no CSS pulse needed
   },
   once: true,
 });

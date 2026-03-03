@@ -245,10 +245,16 @@ export class ParticleSystem {
       let r = BASE_COLOR.r, g = BASE_COLOR.g, b = BASE_COLOR.b;
 
       if (p < 0.15) {
-        // Chaos: original scattered + gentle float
+        // Chaos: scattered drift with visible downward current
         const drift = time * 0.0003 * rz;
+        // Gentle downstream flow — wraps particles back to top when they drift below
+        const currentSpeed = 0.0004 * rz;
+        const yRange = 40; // matches original scatter range
+        const rawY = this.originalPositions[i3 + 1] - (time * currentSpeed) % yRange;
+        const wrappedY = ((rawY + yRange * 0.5) % yRange + yRange) % yRange - yRange * 0.5;
+
         targetX = this.originalPositions[i3] + Math.sin(drift + rx) * 2;
-        targetY = this.originalPositions[i3 + 1] + Math.cos(drift + ry) * 1.5;
+        targetY = wrappedY + Math.cos(drift + ry) * 0.8;
         targetZ = this.originalPositions[i3 + 2] + Math.sin(drift * 0.7) * 1;
 
         // Subtle color hint as we approach pipeline
@@ -353,9 +359,8 @@ export class ParticleSystem {
         g = CONVERGENCE_COLOR.g * brightness;
         b = CONVERGENCE_COLOR.b * brightness;
       } else {
-        // Tight convergence point with gentle pulse
-        const breathe = Math.sin(time * 0.002) * 0.3 + 0.7;
-        const cr = 0.5 * breathe;
+        // Tight static point — particles ARE the convergence dot
+        const cr = 0.15;
 
         targetX = this.convergenceTargets[i3] * cr;
         targetY = this.convergenceTargets[i3 + 1] * cr;
