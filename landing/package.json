@@ -9,9 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "three": "^0.170.0",
+    "chart.js": "^4.5.1",
     "gsap": "^3.12.7",
-    "lenis": "^1.1.18"
+    "lenis": "^1.1.18",
+    "three": "^0.170.0"
   },
   "devDependencies": {
     "vite": "^6.0.0"

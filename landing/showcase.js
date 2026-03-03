@@ -6,7 +6,10 @@
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Chart, registerables } from 'chart.js';
 import { ParticleSystem } from './particles.js';
+
+Chart.register(...registerables);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -241,9 +244,6 @@ window.addEventListener('resize', () => {
 // ============================================================
 
 function initCharts() {
-  // Skip if Chart.js not loaded
-  if (typeof Chart === 'undefined') return;
-
   // Seine brand colors
   const SOLID = '#48BB78';
   const SOFT = '#ECC94B';
@@ -593,15 +593,7 @@ ScrollTrigger.create({
       duration: 0.9,
       ease: 'power3.out',
     });
-    // Wait for section reveal, then init charts (with CDN load fallback)
-    setTimeout(() => {
-      if (typeof Chart !== 'undefined') {
-        initCharts();
-      } else {
-        const cdnScript = document.querySelector('script[src*="chart.js"]');
-        if (cdnScript) cdnScript.addEventListener('load', initCharts, { once: true });
-      }
-    }, 300);
+    initCharts();
   },
   once: true,
 });
