@@ -213,38 +213,142 @@ Copy these directories into your project's `.claude/` folder:
 
 ## Architecture
 
+### Pipeline Flow
+
+```mermaid
+flowchart TD
+    Q["Query"] --> R["Router"]
+    R --> D["Domain Dispatch"]
+    D --> |web| W["WebSearch"]
+    D --> |academic| A["WebSearch + arxiv/DBLP"]
+    D --> |osint| O["WebSearch + EDGAR/Wikidata/..."]
+    D --> |social| S["WebSearch + Twitter/Reddit"]
+
+    W & A & O & S --> F["Result Fusion (RRF)"]
+
+    F --> T{"Triage Gate
+    3 agents · parallel"}
+    T --> |"pass"| OUT
+    T --> |"flag"| C1
+
+    C1["Council R1
+    7 members · parallel"] --> GT["Ground Truth +
+    Targeted Research"]
+    GT --> C2["Council R2
+    Validation"]
+
+    C2 --> RP["Research Pipeline
+    Phase A → Gate → B → Gate → C"]
+
+    RP --> OUT["Output Layer
+    renderer → humanizer"]
+    OUT --> FINAL["research/final/{slug}.md"]
+
+    style Q fill:#4A90D9,color:#fff
+    style F fill:#7B68EE,color:#fff
+    style T fill:#FF8C00,color:#fff
+    style C1 fill:#9B59B6,color:#fff
+    style C2 fill:#9B59B6,color:#fff
+    style RP fill:#E74C3C,color:#fff
+    style OUT fill:#2ECC71,color:#fff
+    style FINAL fill:#27AE60,color:#fff
 ```
-                        ┌─────────────────────────────────────────┐
-  Query ───────────────>│  Router  ->  Domain Dispatch  ->  RRF   │
-                        └─────────────────┬───────────────────────┘
-                                          │
-              ┌───────────────────────────▼───────────────────────────┐
-   scan+      │   TRIAGE GATE (3 agents, parallel)                    │
-              │   completeness  ·  quality  ·  gaps                   │
-              └───────────────────────────┬───────────────────────────┘
-                                          │ flag? escalate
-              ┌───────────────────────────▼───────────────────────────┐
-   dig+       │   COUNCIL R1 (7 members, parallel)                    │
-              │   synthesizer · contrarian · lateral-hunter            │
-              │   source-critic · pattern-spotter · blind-spot         │
-              │   temporal                                             │
-              └───────────────────────────┬───────────────────────────┘
-                                          │ R1 synthesis
-              ┌───────────────────────────▼───────────────────────────┐
-   dig+       │   GROUND TRUTH + TARGETED RESEARCH                    │
-              │   -> COUNCIL R2 (validation)                          │
-              └───────────────────────────┬───────────────────────────┘
-                                          │
-              ┌───────────────────────────▼───────────────────────────┐
-   drill+     │   RESEARCH PIPELINE (phased)                          │
-              │   Phase A: hunter + scout  ->  Gate A (validator)      │
-              │   Phase B: skeptic + referee  ->  Gate B (validator)   │
-              │   Phase C: adversarial + confidence                    │
-              └───────────────────────────┬───────────────────────────┘
-                                          │
-              ┌───────────────────────────▼───────────────────────────┐
-   dig+       │   OUTPUT: renderer -> humanizer -> final document     │
-              └───────────────────────────────────────────────────────┘
+
+### Depth Activation
+
+```mermaid
+graph LR
+    subgraph skim
+        R1[Route + Fuse]
+    end
+    subgraph scan
+        R1 --> TR[Triage Gate]
+    end
+    subgraph dig
+        TR --> CO[Council R1/R2]
+    end
+    subgraph drill
+        CO --> RE[Research Pipeline]
+    end
+    subgraph siege
+        RE --> MR[Multi-round Convergence]
+    end
+
+    style skim fill:#E8F5E9,stroke:#4CAF50
+    style scan fill:#FFF3E0,stroke:#FF9800
+    style dig fill:#E3F2FD,stroke:#2196F3
+    style drill fill:#F3E5F5,stroke:#9C27B0
+    style siege fill:#FFEBEE,stroke:#F44336
+```
+
+### Research Pipeline Phases
+
+```mermaid
+flowchart LR
+    subgraph "Phase A — Discovery"
+        H["hunter"] & SC["scout"]
+    end
+
+    subgraph GA["Gate A"]
+        VA["validator"]
+    end
+
+    subgraph "Phase B — Analysis"
+        SK["skeptic"] & RF["referee"]
+    end
+
+    subgraph GB["Gate B"]
+        VB["validator"]
+    end
+
+    subgraph "Phase C — Synthesis"
+        AR["adversarial-reviewer"] & CQ["confidence-quantifier"]
+    end
+
+    H & SC --> VA
+    VA --> |PASS| SK & RF
+    VA --> |FAIL| STOP1["Pipeline Stops"]
+    SK & RF --> VB
+    VB --> |PASS| AR & CQ
+    VB --> |FAIL| STOP2["Pipeline Stops"]
+
+    style GA fill:#FFF3E0,stroke:#FF9800
+    style GB fill:#FFF3E0,stroke:#FF9800
+    style STOP1 fill:#FFCDD2,stroke:#F44336
+    style STOP2 fill:#FFCDD2,stroke:#F44336
+```
+
+### Council: 7 Cognitive Perspectives
+
+```mermaid
+graph TD
+    QUERY((Query)) --> SYN["Synthesizer
+    Integration · Big-picture"]
+    QUERY --> CON["Contrarian
+    Stress-test · Prove it"]
+    QUERY --> LAT["Lateral Hunter
+    Adjacent domains · Analogies"]
+    QUERY --> SRC["Source Critic
+    Provenance · Authority · Bias"]
+    QUERY --> PAT["Pattern Spotter
+    Trends · Correlations"]
+    QUERY --> BLI["Blind Spot
+    Missing perspectives"]
+    QUERY --> TEM["Temporal
+    Emerging → Peaking → Declining"]
+
+    SYN & CON & LAT & SRC & PAT & BLI & TEM --> V{"Synthesis
+    pass / flag"}
+
+    style QUERY fill:#4A90D9,color:#fff
+    style SYN fill:#3498DB,color:#fff
+    style CON fill:#E74C3C,color:#fff
+    style LAT fill:#F39C12,color:#fff
+    style SRC fill:#1ABC9C,color:#fff
+    style PAT fill:#9B59B6,color:#fff
+    style BLI fill:#E67E22,color:#fff
+    style TEM fill:#2ECC71,color:#fff
+    style V fill:#34495E,color:#fff
 ```
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for full agent schemas, output format, and research agent JSON envelope specification.

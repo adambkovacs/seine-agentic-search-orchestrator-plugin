@@ -4,29 +4,47 @@
 
 Seine processes queries through a depth-controlled pipeline. Deeper depths activate more agents and produce more thorough analysis.
 
-```
-Query -> Router -> Domain Dispatch -> Result Fusion (RRF)
-  |
-  [scan+]  Triage Gate: completeness, quality, gaps (3 agents, parallel)
-  |         -> flag? escalate to council
-  [dig+]   Council R1: 7 members in parallel -> R1 synthesis
-  |
-  [dig+]   Ground Truth Overlay (optional): primary source data enriches findings
-  |
-  [dig+]   Targeted Research: sprint on specific gaps from R1
-  |
-  [dig+]   Council R2: 7 members validate new data, check second-order risks
-  |
-  [drill+] Research Pipeline:
-             Phase A (Discovery): hunter + scout (parallel)
-             Gate A: validator (PASS/FAIL)
-             Phase B (Analysis): skeptic + referee (parallel)
-             Gate B: validator (PASS/FAIL)
-             Phase C (Synthesis): adversarial-reviewer + confidence-quantifier (parallel)
-  |
-  [siege]  Multi-round until convergence (max 10 rounds)
-  |
-  [dig+]   Output Layer: renderer -> humanizer -> final document
+```mermaid
+flowchart TD
+    Q["Query"] --> R["Router"]
+    R --> D["Domain Dispatch"]
+    D --> |web| W["WebSearch"]
+    D --> |academic| A["WebSearch + arxiv/DBLP"]
+    D --> |osint| O["WebSearch + EDGAR/Wikidata"]
+    D --> |social| S["WebSearch + Twitter/Reddit"]
+
+    W & A & O & S --> F["Result Fusion (RRF)"]
+
+    F --> T{"Triage Gate · scan+
+    completeness · quality · gaps"}
+    T --> |"pass"| OUT
+    T --> |"flag"| C1
+
+    C1["Council R1 · dig+
+    7 members · parallel"] --> GT["Ground Truth +
+    Targeted Research"]
+    GT --> C2["Council R2
+    Validation"]
+
+    C2 --> RP["Research Pipeline · drill+
+    Phase A → Gate → B → Gate → C"]
+
+    RP --> SG["Siege Loop · siege
+    Multi-round convergence (max 10)"]
+    SG --> OUT
+
+    OUT["Output Layer · dig+
+    renderer → humanizer"] --> FINAL["research/final/{slug}.md"]
+
+    style Q fill:#4A90D9,color:#fff
+    style F fill:#7B68EE,color:#fff
+    style T fill:#FF8C00,color:#fff
+    style C1 fill:#9B59B6,color:#fff
+    style C2 fill:#9B59B6,color:#fff
+    style RP fill:#E74C3C,color:#fff
+    style SG fill:#B71C1C,color:#fff
+    style OUT fill:#2ECC71,color:#fff
+    style FINAL fill:#27AE60,color:#fff
 ```
 
 ## Depth Behavior
@@ -129,21 +147,70 @@ All 7 council members produce the same JSON structure:
 }
 ```
 
+## Research Pipeline Detail
+
+```mermaid
+flowchart LR
+    subgraph "Phase A — Discovery"
+        H["hunter"] & SC["scout"]
+    end
+
+    subgraph GA["Gate A"]
+        VA["validator"]
+    end
+
+    subgraph "Phase B — Analysis"
+        SK["skeptic"] & RF["referee"]
+    end
+
+    subgraph GB["Gate B"]
+        VB["validator"]
+    end
+
+    subgraph "Phase C — Synthesis"
+        AR["adversarial-reviewer"] & CQ["confidence-quantifier"]
+    end
+
+    H & SC --> VA
+    VA --> |PASS| SK & RF
+    VA --> |FAIL| STOP1["Pipeline Stops"]
+    SK & RF --> VB
+    VB --> |PASS| AR & CQ
+    VB --> |FAIL| STOP2["Pipeline Stops"]
+
+    style GA fill:#FFF3E0,stroke:#FF9800
+    style GB fill:#FFF3E0,stroke:#FF9800
+    style STOP1 fill:#FFCDD2,stroke:#F44336
+    style STOP2 fill:#FFCDD2,stroke:#F44336
+```
+
 ## Artifact Directory Structure
 
 At `dig` depth and above, each query creates a persistent artifact directory:
 
-```
-research/artifacts/{query-slug}-{date}/
-  00-query.json              # Original query + routing decision
-  01-search-rounds/          # Per-domain raw results
-  02-fusion.json             # RRF-fused results with scores
-  03-triage/                 # 3 triage verdicts
-  04-council-r1/             # 7 council member outputs
-  05-research/               # Research phase outputs + gates
-  06-council-r2/             # R2 outputs (if run)
-  07-sources.json            # Deduplicated master source list
-  08-timeline.json           # Per-stage timing
-```
+```mermaid
+graph TD
+    ROOT["research/artifacts/{query-slug}-{date}/"] --> Q0["00-query.json
+    Routing decision + domains"]
+    ROOT --> S1["01-search-rounds/
+    Per-domain raw results"]
+    ROOT --> F2["02-fusion.json
+    RRF-fused results + scores"]
+    ROOT --> T3["03-triage/
+    3 triage verdicts"]
+    ROOT --> C4["04-council-r1/
+    7 council member outputs"]
+    ROOT --> R5["05-research/
+    Research phase outputs + gates"]
+    ROOT --> C6["06-council-r2/
+    R2 outputs (if run)"]
+    ROOT --> S7["07-sources.json
+    Deduplicated master source list"]
+    ROOT --> T8["08-timeline.json
+    Per-stage timing"]
 
-Final rendered output: `research/final/{slug}.md`
+    ROOT -.-> FINAL["research/final/{slug}.md"]
+
+    style ROOT fill:#34495E,color:#fff
+    style FINAL fill:#27AE60,color:#fff
+```
