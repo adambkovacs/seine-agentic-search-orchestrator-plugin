@@ -14,7 +14,7 @@
 <p align="center">
   <a href="https://github.com/adambkovacs/seine-agentic-search-orchestrator-plugin/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/version-1.0.0-green.svg" alt="Version 1.0.0">
-  <img src="https://img.shields.io/badge/agents-20-purple.svg" alt="20 Agents">
+  <img src="https://img.shields.io/badge/agents-21-purple.svg" alt="21 Agents">
   <img src="https://img.shields.io/badge/council_members-7-orange.svg" alt="7 Council Members">
   <img src="https://img.shields.io/badge/domains-4-0D9488.svg" alt="4 Domains">
   <img src="https://img.shields.io/badge/depth_levels-5-red.svg" alt="5 Depth Levels">
@@ -195,7 +195,7 @@ graph TD
 | **Search** | 4 domains (web, academic, OSINT, social), Reciprocal Rank Fusion, 5 depth levels, boolean query construction, counter-evidence generation |
 | **Council** | 7-member deliberative council, triage gate (3 agents), multi-round deliberation (R1 + R2) |
 | **Research** | 3-phase gated pipeline (Discovery, Analysis, Synthesis), 7 research agents, validation gates that stop on FAIL |
-| **Output** | Mandatory source tables with trust tiers, inline citations, confidence scores per claim, anti-slop humanizer (90%+ quality gate) |
+| **Output** | Mandatory source tables with trust tiers, inline citations, confidence scores per claim, anti-slop humanizer (90%+ quality gate), interactive HTML dossier with Chart.js visualizations |
 | **OSINT** | 13 query patterns for SEC/EDGAR, OpenCorporates, Wikidata, LittleSis, OFAC, FEC, CompaniesHouse, CANDID, court records, patents, news, sanctions, property (all via `WebSearch` with `site:` targeting, no API keys) |
 
 </details>
@@ -225,6 +225,7 @@ graph TD
 | `/seine:seine-search` | Multi-domain search with triage | Any (`skim` to `siege`) |
 | `/seine:seine-council` | Deliberative council analysis | `dig`+ |
 | `/seine:seine-research` | Full phased research pipeline | `drill`+ |
+| `/seine:seine-render` | Generate interactive HTML dossier from artifacts | Any (post-pipeline) |
 
 ### Depth Guide
 
@@ -397,12 +398,12 @@ No single agent's judgment is trusted. Every claim must survive independent disc
 | Category | Count | Agents |
 |----------|-------|--------|
 | **Orchestrator** | 1 | `researcher` |
-| **Output** | 2 | `output-renderer`, `humanizer` |
+| **Output** | 3 | `output-renderer`, `humanizer`, `report-renderer` |
 | **Triage** | 3 | `completeness`, `quality`, `gaps` |
 | **Council** | 7 | `synthesizer`, `contrarian`, `lateral-hunter`, `source-critic`, `pattern-spotter`, `blind-spot`, `temporal` |
 | **Research** | 7 | `hunter`, `scout`, `skeptic`, `referee`, `validator`, `adversarial-reviewer`, `confidence-quantifier` |
 
-Plus 2 knowledge base files and 3 skills.
+Plus 2 knowledge base files and 4 skills.
 
 <details>
 <summary><strong>Triage agents (3)</strong></summary>
@@ -476,6 +477,8 @@ Three-phase sequence with validation gates. All agents in the same phase run in 
 
 **Humanizer:** 5-tier anti-slop audit. Tier 1 violations (em dashes, emoji) cost 10 points each. Threshold: 90/100. Structured data is never touched.
 
+**Report Renderer:** Reads pipeline JSON artifacts and produces a self-contained interactive HTML dossier (`09-dossier.html`) with Chart.js charts, confidence bars, evidence doughnuts, pipeline gantt, and auto-detected visualizations. Works offline, zero external dependencies. Handles partial pipelines (gate FAIL) gracefully.
+
 </details>
 
 </details>
@@ -495,10 +498,11 @@ research/artifacts/{query-slug}-{date}/
 ├── 05-research/               # Research phase outputs + gates
 ├── 06-council-r2/             # R2 outputs (if run)
 ├── 07-sources.json            # Deduplicated master source list
-└── 08-timeline.json           # Per-stage timing
+├── 08-timeline.json           # Per-stage timing
+└── 09-dossier.html            # Interactive HTML dossier with charts
 ```
 
-Final rendered output: `research/final/{slug}.md`
+Final rendered output: `research/final/{slug}.md` (prose) and `09-dossier.html` (visual dossier with Chart.js)
 
 </details>
 
