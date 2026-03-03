@@ -544,6 +544,51 @@ body {
   transform: translateY(24px);
 }
 
+/* ---- Charts grid ---- */
+.sc-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.sc-chart-card {
+  background: var(--bg-subtle);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sc-chart-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,179,237,0.2), transparent);
+}
+
+.sc-chart-card:first-child {
+  grid-column: 1 / -1;
+}
+
+.sc-chart-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .sc-charts-grid { grid-template-columns: 1fr; }
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
   #particle-canvas { display: none; }
