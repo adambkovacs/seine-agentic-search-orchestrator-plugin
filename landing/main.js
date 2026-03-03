@@ -247,39 +247,6 @@ ScrollTrigger.create({
   once: true,
 });
 
-// -- Output Showcase Section --
-ScrollTrigger.create({
-  trigger: '#output',
-  start: 'top 70%',
-  onEnter: () => {
-    gsap.to('.output-card', {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: 'power3.out',
-    });
-  },
-  once: true,
-});
-
-const confRows = gsap.utils.toArray('.output-conf-row');
-confRows.forEach((row, i) => {
-  ScrollTrigger.create({
-    trigger: row,
-    start: 'top 90%',
-    onEnter: () => {
-      gsap.to(row, {
-        opacity: 1,
-        x: 0,
-        duration: 0.5,
-        delay: i * 0.08,
-        ease: 'power3.out',
-      });
-    },
-    once: true,
-  });
-});
-
 // -- Convergence Section --
 ScrollTrigger.create({
   trigger: '#convergence',
@@ -291,7 +258,13 @@ ScrollTrigger.create({
       duration: 1.2,
       ease: 'power3.out',
     });
-    // particles converge into the dot — no CSS pulse needed
+    gsap.to('.showcase-cta', {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      delay: 0.6,
+      ease: 'power3.out',
+    });
   },
   once: true,
 });
