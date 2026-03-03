@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seine - Agentic Search Orchestration</title>
+  <meta name="description" content="20 AI agents. Gated pipeline. Calibrated confidence. Single searches satisfice. Orchestrated agents converge on truth." />
+  <meta property="og:title" content="Seine - Agentic Search Orchestration" />
+  <meta property="og:description" content="20 AI agents. Gated pipeline. Calibrated confidence." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+
+  <div id="scroll-container">
+    <!-- Section 1: Hero -->
+    <section id="hero" class="section">
+      <div class="section-inner hero-inner">
+        <h1 class="hero-title">Seine</h1>
+        <p class="hero-subtitle">Agentic search orchestration</p>
+        <p class="hero-tagline">Single searches satisfice.<br/>Orchestrated agents converge on truth.</p>
+        <div class="scroll-hint">
+          <span class="scroll-hint-text">Scroll to follow the current</span>
+          <div class="scroll-hint-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: The Problem -->
+    <section id="problem" class="section">
+      <div class="section-inner">
+        <h2 class="section-label">The Problem</h2>
+        <p class="problem-text">
+          A single AI search gives you one angle, one framing, and zero adversarial pressure.
+          You have no way to know if the finding would survive basic scrutiny.
+        </p>
+        <div class="problem-stats">
+          <div class="stat">
+            <span class="stat-number">1</span>
+            <span class="stat-label">angle</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">0</span>
+            <span class="stat-label">challenges</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">?</span>
+            <span class="stat-label">confidence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: The Pipeline (Depth Activation) -->
+    <section id="pipeline" class="section section-tall">
+      <div class="section-inner">
+        <h2 class="section-label">The Pipeline</h2>
+        <p class="section-desc">Five depth levels. Each activates more agents, more scrutiny, more truth.</p>
+        <div class="depth-levels">
+          <div class="depth-level" data-depth="skim">
+            <div class="depth-bar">
+              <div class="depth-fill" style="--depth-color: #F6E05E"></div>
+            </div>
+            <div class="depth-info">
+              <span class="depth-name">skim</span>
+              <span class="depth-detail">Route + Fuse</span>
+              <span class="depth-agents">0 agents</span>
+              <span class="depth-time">~30s</span>
+            </div>
+          </div>
+          <div class="depth-level" data-depth="scan">
+            <div class="depth-bar">
+              <div class="depth-fill" style="--depth-color: #FC8181"></div>
+            </div>
+            <div class="depth-info">
+              <span class="depth-name">scan</span>
+              <span class="depth-detail">Triage Gate</span>
+              <span class="depth-agents">3 agents</span>
+              <span class="depth-time">~1-2min</span>
+            </div>
+          </div>
+          <div class="depth-level" data-depth="dig">
+            <div class="depth-bar">
+              <div class="depth-fill" style="--depth-color: #63B3ED"></div>
+            </div>
+            <div class="depth-info">
+              <span class="depth-name">dig</span>
+              <span class="depth-detail">Council R1/R2</span>
+              <span class="depth-agents">10 agents</span>
+              <span class="depth-time">~3-5min</span>
+            </div>
+          </div>
+          <div class="depth-level" data-depth="drill">
+            <div class="depth-bar">
+              <div class="depth-fill" style="--depth-color: #B794F4"></div>
+            </div>
+            <div class="depth-info">
+              <span class="depth-name">drill</span>
+              <span class="depth-detail">Research Pipeline</span>
+              <span class="depth-agents">17 agents</span>
+              <span class="depth-time">~8-15min</span>
+            </div>
+          </div>
+          <div class="depth-level" data-depth="siege">
+            <div class="depth-bar">
+              <div class="depth-fill" style="--depth-color: #F687B3"></div>
+            </div>
+            <div class="depth-info">
+              <span class="depth-name">siege</span>
+              <span class="depth-detail">Multi-round Convergence</span>
+              <span class="depth-agents">20 agents</span>
+              <span class="depth-time">~20-40min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: The Council -->
+    <section id="council" class="section section-tall">
+      <div class="section-inner">
+        <h2 class="section-label">The Council</h2>
+        <p class="section-desc">Seven cognitive perspectives. None sees another's output. All challenge the same evidence.</p>
+        <div class="council-ring">
+          <div class="council-member" data-member="synthesizer" style="--member-color: #2B6CB0">
+            <span class="member-name">Synthesizer</span>
+            <span class="member-role">Integration + Big-picture</span>
+          </div>
+          <div class="council-member" data-member="contrarian" style="--member-color: #C53030">
+            <span class="member-name">Contrarian</span>
+            <span class="member-role">Stress-test + Prove it</span>
+          </div>
+          <div class="council-member" data-member="lateral" style="--member-color: #D69E2E">
+            <span class="member-name">Lateral Hunter</span>
+            <span class="member-role">Adjacent domains + Analogies</span>
+          </div>
+          <div class="council-member" data-member="source" style="--member-color: #2F855A">
+            <span class="member-name">Source Critic</span>
+            <span class="member-role">Provenance + Authority + Bias</span>
+          </div>
+          <div class="council-member" data-member="pattern" style="--member-color: #6B46C1">
+            <span class="member-name">Pattern Spotter</span>
+            <span class="member-role">Trends + Correlations</span>
+          </div>
+          <div class="council-member" data-member="blind" style="--member-color: #9B2C2C">
+            <span class="member-name">Blind Spot</span>
+            <span class="member-role">Missing perspectives</span>
+          </div>
+          <div class="council-member" data-member="temporal" style="--member-color: #38A169">
+            <span class="member-name">Temporal</span>
+            <span class="member-role">Emerging / Peaking / Declining</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: The Research Pipeline -->
+    <section id="research" class="section section-tall">
+      <div class="section-inner">
+        <h2 class="section-label">The Research</h2>
+        <p class="section-desc">Three phases. Two validation gates. A FAIL stops the pipeline.</p>
+        <div class="research-phases">
+          <div class="phase" data-phase="a">
+            <div class="phase-header">
+              <span class="phase-letter">A</span>
+              <span class="phase-name">Discovery</span>
+            </div>
+            <div class="phase-agents">
+              <span class="agent-tag">hunter</span>
+              <span class="agent-tag">scout</span>
+            </div>
+          </div>
+          <div class="gate" data-gate="a">
+            <span class="gate-label">Gate A</span>
+            <span class="gate-detail">validator</span>
+            <div class="gate-line"></div>
+          </div>
+          <div class="phase" data-phase="b">
+            <div class="phase-header">
+              <span class="phase-letter">B</span>
+              <span class="phase-name">Analysis</span>
+            </div>
+            <div class="phase-agents">
+              <span class="agent-tag">skeptic</span>
+              <span class="agent-tag">referee</span>
+            </div>
+          </div>
+          <div class="gate" data-gate="b">
+            <span class="gate-label">Gate B</span>
+            <span class="gate-detail">validator</span>
+            <div class="gate-line"></div>
+          </div>
+          <div class="phase" data-phase="c">
+            <div class="phase-header">
+              <span class="phase-letter">C</span>
+              <span class="phase-name">Synthesis</span>
+            </div>
+            <div class="phase-agents">
+              <span class="agent-tag">adversarial</span>
+              <span class="agent-tag">confidence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: The Evidence -->
+    <section id="evidence" class="section">
+      <div class="section-inner">
+        <h2 class="section-label">The Evidence</h2>
+        <p class="section-desc">Every claim is scored. No label is trusted without verification.</p>
+        <div class="evidence-bars">
+          <div class="evidence-row" data-level="solid">
+            <div class="evidence-label-container">
+              <span class="evidence-label">SOLID</span>
+              <span class="evidence-meaning">Multiple independent sources, no contradictions</span>
+            </div>
+            <div class="evidence-bar-track">
+              <div class="evidence-bar-fill" style="--bar-color: #48BB78; --bar-width: 92%"></div>
+              <span class="evidence-score">0.92</span>
+            </div>
+          </div>
+          <div class="evidence-row" data-level="soft">
+            <div class="evidence-label-container">
+              <span class="evidence-label">SOFT</span>
+              <span class="evidence-meaning">Single credible source or indirect evidence</span>
+            </div>
+            <div class="evidence-bar-track">
+              <div class="evidence-bar-fill" style="--bar-color: #ECC94B; --bar-width: 60%"></div>
+              <span class="evidence-score">0.60</span>
+            </div>
+          </div>
+          <div class="evidence-row" data-level="shaky">
+            <div class="evidence-label-container">
+              <span class="evidence-label">SHAKY</span>
+              <span class="evidence-meaning">Single biased source or conflicting evidence</span>
+            </div>
+            <div class="evidence-bar-track">
+              <div class="evidence-bar-fill" style="--bar-color: #F56565; --bar-width: 30%"></div>
+              <span class="evidence-score">0.30</span>
+            </div>
+          </div>
+          <div class="evidence-row" data-level="unknown">
+            <div class="evidence-label-container">
+              <span class="evidence-label">UNKNOWN</span>
+              <span class="evidence-meaning">Insufficient evidence to assess</span>
+            </div>
+            <div class="evidence-bar-track">
+              <div class="evidence-bar-fill" style="--bar-color: #718096; --bar-width: 5%"></div>
+              <span class="evidence-score">0.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="confidence-formula">
+          <span class="formula-label">Confidence formula:</span>
+          <code class="formula">(evidence x 0.40) + (source_quality x 0.25) + (recency x 0.20) + (agreement x 0.15)</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Convergence -->
+    <section id="convergence" class="section">
+      <div class="section-inner convergence-inner">
+        <p class="convergence-text">20 agents. One truth.</p>
+        <div class="convergence-pulse"></div>
+      </div>
+    </section>
+
+    <!-- Section 8: Install -->
+    <section id="install" class="section">
+      <div class="section-inner">
+        <h2 class="section-label">Install</h2>
+        <div class="install-block">
+          <div class="install-method">
+            <span class="install-platform">Claude Code</span>
+            <div class="code-block">
+              <code>/plugin marketplace add adambkovacs/seine-agentic-search-orchestrator-plugin</code>
+              <button class="copy-btn" data-copy="/plugin marketplace add adambkovacs/seine-agentic-search-orchestrator-plugin" aria-label="Copy to clipboard">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 11V3C3 2.44772 3.44772 2 4 2H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="code-block">
+              <code>/plugin install seine</code>
+              <button class="copy-btn" data-copy="/plugin install seine" aria-label="Copy to clipboard">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3 11V3C3 2.44772 3.44772 2 4 2H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="install-method">
+            <span class="install-platform">Claude Cowork</span>
+            <p class="install-note">Search marketplace for <code>seine</code> or add by repo URL.</p>
+          </div>
+        </div>
+        <div class="install-badges">
+          <a href="https://github.com/adambkovacs/seine-agentic-search-orchestrator-plugin" class="badge-link" target="_blank" rel="noopener noreferrer">
+            <span class="badge">GitHub</span>
+          </a>
+          <span class="badge badge-info">MIT License</span>
+          <span class="badge badge-info">20 Agents</span>
+          <span class="badge badge-info">7 Council Members</span>
+          <span class="badge badge-info">Zero Dependencies</span>
+          <span class="badge badge-info">No API Keys</span>
+        </div>
+        <div class="footer-credit">
+          Built by <a href="https://github.com/adambkovacs" target="_blank" rel="noopener noreferrer">Adam Kovacs</a>
+          at <a href="https://github.com/AI-Enablement-Academy" target="_blank" rel="noopener noreferrer">AI Enablement Academy</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
