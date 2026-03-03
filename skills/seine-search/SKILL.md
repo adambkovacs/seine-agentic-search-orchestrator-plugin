@@ -177,3 +177,14 @@ Agent({ subagent_type: "seine-humanizer", model: "sonnet",
 ```javascript
 Write({ file_path: "research/final/{slug}.md", content: "<humanized_markdown_from_agent>" })
 ```
+
+### Step 10 — HTML Dossier (depth >= drill, ADR-S017)
+
+At `skim`, `scan`, and `dig` depth: skip. At `drill` and `siege`: always run.
+
+```javascript
+Agent({ subagent_type: "seine-report-renderer", model: "sonnet",
+        prompt: "Artifact directory: research/artifacts/{slug}/\n\nRead all JSON files in the artifact directory (00-query.json through 08-timeline.json, skip missing). Auto-detect chartable data from the findings. Generate a self-contained HTML dossier with Chart.js charts bundled inline. Write the output to research/artifacts/{slug}/09-dossier.html." })
+```
+
+Report the dossier path to the user: `research/artifacts/{slug}/09-dossier.html`
