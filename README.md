@@ -1,9 +1,14 @@
 <p align="center">
-  <h1 align="center">Seine</h1>
-  <h3 align="center">Agentic search orchestration. 20 AI agents. Gated pipeline. Calibrated confidence.</h3>
-  <p align="center">
-    Single searches satisfice. Orchestrated agents converge on truth.
-  </p>
+  <a href="https://seinesearch.com">
+    <img src="docs/seine-hero.png" alt="Seine — Agentic (deep)search orchestration" width="720">
+  </a>
+</p>
+
+<h3 align="center">A search returns an answer. Seine returns the truth.</h3>
+
+<p align="center">
+  20 AI agents. Gated pipeline. Calibrated confidence.<br/>
+  <a href="https://seinesearch.com"><strong>seinesearch.com</strong></a>
 </p>
 
 <p align="center">
