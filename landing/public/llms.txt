@@ -1,0 +1,54 @@
+# Seine — Agentic (Deep)Search Orchestration
+
+> A search returns an answer. Seine returns the truth.
+
+## What is Seine?
+
+Seine is an open-source agentic search orchestration plugin for Claude Code and Claude Cowork. It coordinates 20 specialized AI agents across a gated research pipeline to produce calibrated, adversarially-tested research dossiers.
+
+## How it works
+
+Seine runs a 3-phase pipeline for every query:
+
+1. **Phase A — Discovery**: Hunter and Scout agents search across 9 domains (web, academic, OSINT, social, intel, entity, CRM, memory, vision) to build an evidence map.
+2. **Gate A — Validation**: A validator agent checks schema compliance and confidence. FAIL stops the pipeline.
+3. **Phase B — Analysis**: Skeptic and Referee agents challenge claims and resolve conflicts between sources.
+4. **Gate B — Validation**: Second validation gate. FAIL stops the pipeline.
+5. **Phase C — Synthesis**: Adversarial reviewer red-teams the findings. Confidence quantifier produces calibrated scores using: (evidence x 0.40) + (source_quality x 0.25) + (recency x 0.20) + (agreement x 0.15).
+
+A 7-member deliberative council provides multi-perspective analysis: Synthesizer, Contrarian, Lateral Hunter, Source Critic, Pattern Spotter, Blind Spot detector, and Temporal analyst.
+
+## Key features
+
+- 20 specialized AI agents
+- 7-member deliberative council
+- 3-phase gated research pipeline with PASS / PASS_WITH_NOTES / FAIL verdicts
+- Calibrated confidence scoring per finding
+- Evidence vocabulary: SOLID (1.0), SOFT (0.6), SHAKY (0.3), UNKNOWN (0.0)
+- Source quality tiers: HIGH, MEDIUM, LOW, UNKNOWN
+- 9 search domains
+- Artifact persistence with numbered file output
+
+## Depth levels
+
+- **skim**: Quick web search (1-2 agents, ~30 seconds)
+- **dig**: Standard multi-source search (5-8 agents, ~5 minutes)
+- **drill**: Deep multi-round research (all 20 agents, ~30-60 minutes)
+- **siege**: Maximum depth with opus-class models (all 20 agents, ~60-120 minutes)
+
+## Installation
+
+```
+# Claude Code
+/plugin install seine
+
+# Manual
+git clone https://github.com/adambkovacs/seine-agentic-search-orchestrator-plugin
+```
+
+## Links
+
+- Website: https://seinesearch.com
+- GitHub: https://github.com/adambkovacs/seine-agentic-search-orchestrator-plugin
+- Example dossier: https://seinesearch.com/showcase.html
+- License: MIT
