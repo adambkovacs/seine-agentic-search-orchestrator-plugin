@@ -141,8 +141,9 @@ ScrollTrigger.create({
   once: true,
 });
 
-// -- Section reveals (all .sc-reveal except overview) --
-document.querySelectorAll('.sc-reveal:not(#overview)').forEach((section) => {
+// -- Section reveals (all .sc-reveal except overview and charts) --
+// Charts section has its own trigger that also calls initCharts()
+document.querySelectorAll('.sc-reveal:not(#overview):not(#charts)').forEach((section) => {
   ScrollTrigger.create({
     trigger: section,
     start: 'top 80%',
@@ -243,12 +244,16 @@ window.addEventListener('resize', () => {
 // Chart.js Visualizations
 // ============================================================
 
+let chartsInitialized = false;
+
 function initCharts() {
+  if (chartsInitialized) return;
+  chartsInitialized = true;
+
   // Seine brand colors
   const SOLID = '#48BB78';
   const SOFT = '#ECC94B';
   const SHAKY = '#F56565';
-  const UNKNOWN = '#718096';
   const ACCENT = '#63B3ED';
   const TEXT_DIM = '#718096';
   const GRID = 'rgba(255,255,255,0.06)';
@@ -259,6 +264,17 @@ function initCharts() {
   Chart.defaults.font.size = 11;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     Chart.defaults.animation = false;
+  }
+
+  // Helper: create chart with error isolation
+  function createChart(id, config) {
+    try {
+      const el = document.getElementById(id);
+      if (!el) return;
+      new Chart(el, config);
+    } catch (e) {
+      console.warn('Chart failed:', id, e);
+    }
   }
 
   // --- 1. Confidence Scores (horizontal bar, full width) ---
@@ -288,7 +304,7 @@ function initCharts() {
     d.level === 'SOLID' ? SOLID : d.level === 'SOFT' ? SOFT : SHAKY
   );
 
-  new Chart(document.getElementById('chart-confidence'), {
+  createChart('chart-confidence', {
     type: 'bar',
     data: {
       labels: confData.map(d => d.label),
@@ -331,7 +347,7 @@ function initCharts() {
   });
 
   // --- 2. Evidence Strength (doughnut) ---
-  new Chart(document.getElementById('chart-evidence'), {
+  createChart('chart-evidence', {
     type: 'doughnut',
     data: {
       labels: ['SOLID (6)', 'SOFT (10)', 'SHAKY (3)'],
@@ -357,7 +373,7 @@ function initCharts() {
   });
 
   // --- 3. Source Quality (doughnut) ---
-  new Chart(document.getElementById('chart-sources'), {
+  createChart('chart-sources', {
     type: 'doughnut',
     data: {
       labels: ['HIGH (22)', 'MEDIUM (5)'],
@@ -383,7 +399,7 @@ function initCharts() {
   });
 
   // --- 4. Pipeline Execution (horizontal bar / gantt) ---
-  new Chart(document.getElementById('chart-pipeline'), {
+  createChart('chart-pipeline', {
     type: 'bar',
     data: {
       labels: ['Phase A: Discovery', 'Gate A', 'Phase B: Analysis', 'Gate B', 'Phase C: Synthesis', 'Source Compilation'],
@@ -440,7 +456,7 @@ function initCharts() {
   });
 
   // --- 5. EU Enforcement Timeline (horizontal bar as milestone) ---
-  new Chart(document.getElementById('chart-eu-timeline'), {
+  createChart('chart-eu-timeline', {
     type: 'bar',
     data: {
       labels: ['Feb 2025: Prohibited practices', 'Aug 2025: GPAI obligations', 'Aug 2026: High-risk (Annex I/III)', 'Aug 2027: Employment/essential services'],
@@ -496,7 +512,7 @@ function initCharts() {
   });
 
   // --- 6. Penalty Structure (grouped bar) ---
-  new Chart(document.getElementById('chart-penalties'), {
+  createChart('chart-penalties', {
     type: 'bar',
     data: {
       labels: ['Prohibited practices', 'Other high-risk', 'Misleading info'],
@@ -544,7 +560,7 @@ function initCharts() {
   });
 
   // --- 7. Compute Thresholds (bar, log-ish display) ---
-  new Chart(document.getElementById('chart-compute'), {
+  createChart('chart-compute', {
     type: 'bar',
     data: {
       labels: ['EU AI Act (GPAI systemic risk)', 'California TFAIA'],
@@ -560,6 +576,7 @@ function initCharts() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
         tooltip: {
