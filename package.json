@@ -1,0 +1,40 @@
+{
+  "name": "seine-search",
+  "version": "1.1.0",
+  "description": "Multi-domain agentic search orchestrator for Claude Code — 21 agents, 4 skills, 4 domains",
+  "bin": {
+    "seine-search": "bin/cli.mjs"
+  },
+  "files": [
+    "bin/",
+    "agents/",
+    "skills/",
+    ".claude-plugin/",
+    "docs/ARCHITECTURE.md",
+    "docs/EVIDENCE-VOCABULARY.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "search",
+    "agents",
+    "seine",
+    "orchestration",
+    "agentic-search",
+    "deep-search",
+    "research",
+    "osint"
+  ],
+  "license": "MIT",
+  "author": "Seine Contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adambkovacs/seine-agentic-search-orchestrator-plugin"
+  },
+  "homepage": "https://seinesearch.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

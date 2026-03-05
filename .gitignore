@@ -5,3 +5,6 @@ node_modules/
 tmp/
 dist/
 docs/social/
+docs/plans/
+*.tgz
+.npmrc
