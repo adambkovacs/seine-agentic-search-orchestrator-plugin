@@ -1,7 +1,7 @@
 {
   "name": "seine",
   "description": "Multi-domain search orchestration with deliberative council consensus, phased research, and humanized output. 21 agents, 4 skills, 4 public domains.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "name": "Seine Contributors"
   },
