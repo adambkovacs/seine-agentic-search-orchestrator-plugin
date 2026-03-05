@@ -7,13 +7,13 @@
 <h3 align="center">A search returns an answer. Seine returns the truth.</h3>
 
 <p align="center">
-  20 AI agents. Gated pipeline. Calibrated confidence.<br/>
+  21 AI agents. Gated pipeline. Calibrated confidence.<br/>
   <a href="https://seinesearch.com"><strong>seinesearch.com</strong></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/adambkovacs/seine-agentic-search-orchestrator-plugin/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/version-1.0.0-green.svg" alt="Version 1.0.0">
+  <img src="https://img.shields.io/badge/version-1.1.1-green.svg" alt="Version 1.1.1">
   <img src="https://img.shields.io/badge/agents-21-purple.svg" alt="21 Agents">
   <img src="https://img.shields.io/badge/council_members-7-orange.svg" alt="7 Council Members">
   <img src="https://img.shields.io/badge/domains-4-0D9488.svg" alt="4 Domains">
@@ -29,7 +29,7 @@
 
 ---
 
-A single AI search gives you one angle, one framing, and zero adversarial pressure. You have no way to know if the finding would survive basic scrutiny. Seine coordinates 20 specialized agents across a gated pipeline so that every claim is discovered, challenged, resolved, red-teamed, and confidence-scored before it reaches you.
+A single AI search gives you one angle, one framing, and zero adversarial pressure. You have no way to know if the finding would survive basic scrutiny. Seine coordinates 21 specialized agents across a gated pipeline so that every claim is discovered, challenged, resolved, red-teamed, and confidence-scored before it reaches you.
 
 **No dependencies. No API keys. No shell scripts.** Runs entirely inside Claude Code or Claude Cowork using built-in tools.
 
