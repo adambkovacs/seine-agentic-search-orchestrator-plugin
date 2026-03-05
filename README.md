@@ -538,7 +538,7 @@ Contributions welcome. Please open an issue or pull request.
 ---
 
 <p align="center">
-  <sub>Built by <a href="https://github.com/adambkovacs">Adam Kovacs</a> at <a href="https://github.com/AI-Enablement-Academy">AI Enablement Academy</a></sub>
+  <sub>Built by <a href="https://seinesearch.com">Seine Contributors</a></sub>
 </p>
 
 <p align="center">
