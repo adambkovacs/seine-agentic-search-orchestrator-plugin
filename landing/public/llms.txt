@@ -4,7 +4,7 @@
 
 ## What is Seine?
 
-Seine is an open-source agentic search orchestration plugin for Claude Code and Claude Cowork. It coordinates 20 specialized AI agents across a gated research pipeline to produce calibrated, adversarially-tested research dossiers.
+Seine is an open-source agentic search orchestration plugin for Claude Code and Claude Cowork. It coordinates 21 specialized AI agents across a gated research pipeline to produce calibrated, adversarially-tested research dossiers.
 
 ## How it works
 
@@ -20,7 +20,7 @@ A 7-member deliberative council provides multi-perspective analysis: Synthesizer
 
 ## Key features
 
-- 20 specialized AI agents
+- 21 specialized AI agents
 - 7-member deliberative council
 - 3-phase gated research pipeline with PASS / PASS_WITH_NOTES / FAIL verdicts
 - Calibrated confidence scoring per finding
@@ -33,8 +33,8 @@ A 7-member deliberative council provides multi-perspective analysis: Synthesizer
 
 - **skim**: Quick web search (1-2 agents, ~30 seconds)
 - **dig**: Standard multi-source search (5-8 agents, ~5 minutes)
-- **drill**: Deep multi-round research (all 20 agents, ~30-60 minutes)
-- **siege**: Maximum depth with opus-class models (all 20 agents, ~60-120 minutes)
+- **drill**: Deep multi-round research (all 21 agents, ~30-60 minutes)
+- **siege**: Maximum depth with opus-class models (all 21 agents, ~60-120 minutes)
 
 ## Installation
 
