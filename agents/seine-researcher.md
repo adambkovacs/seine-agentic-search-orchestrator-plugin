@@ -38,7 +38,7 @@ Before any orchestration, generate a slug from the query:
 6. Truncate to 60 characters (break at last hyphen before limit)
 7. Append `-{YYYY-MM-DD}` (today's date)
 
-Example: `"How is Delivery Hero investing in AI?"` becomes `how-is-delivery-hero-investing-in-ai-2026-03-02`
+Example: `"How is Acme Corp investing in AI?"` becomes `how-is-acme-corp-investing-in-ai-2026-03-02`
 
 ## Workflow
 

@@ -354,10 +354,10 @@ Every query decomposes into three variants: direct query, angle shift, and count
 "EU AI Act Article 4" site:eur-lex.europa.eu
 
 # Angle shift (hiring signals instead of press releases)
-"Delivery Hero" site:linkedin.com/jobs "machine learning"
+"Acme Corp" site:linkedin.com/jobs "machine learning"
 
 # Counter-evidence
-"Delivery Hero" "cost cutting" OR "layoffs" 2026
+"Acme Corp" "cost cutting" OR "layoffs" 2026
 ```
 
 **Multi-round search:** Seine treats search as a spiral. Round 1 establishes baseline, Round 2 fills gaps, Round 3 challenges findings, Round 4 finds adjacent signals, Round 5 tracks temporal changes. At `siege`, this loops until convergence (capped at 10 rounds).
@@ -415,7 +415,7 @@ Run at `scan`+ in parallel after fusion. A single flag triggers additional searc
 ```json
 { "agent": "completeness", "verdict": "flag",
   "reason": "Query is about SEC filings but 'osint' domain was not searched.",
-  "action": { "type": "search_domain", "domain": "osint", "subquery": "Delivery Hero 10-K SEC annual report 2025" } }
+  "action": { "type": "search_domain", "domain": "osint", "subquery": "Acme Corp 10-K SEC annual report 2025" } }
 ```
 
 **Quality** checks whether top results actually answer the query, not just match keywords.

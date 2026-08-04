@@ -32,12 +32,12 @@ Claude Code's `WebSearch` supports standard web search operators. Use them.
 | `-` | Exclude term | `"AI training" -chatgpt -tutorial -beginner` |
 | `()` | Group terms | `(grant OR funding) "AI" site:europa.eu` |
 | `filetype:` | File type filter | `filetype:pdf "strategic plan" 2026` |
-| `intitle:` | Term in page title | `intitle:"board of directors" "Delivery Hero"` |
-| `inurl:` | Term in URL | `inurl:careers site:deliveryhero.com` |
+| `intitle:` | Term in page title | `intitle:"board of directors" "Acme Corp"` |
+| `inurl:` | Term in URL | `inurl:careers site:acmecorp.com` |
 | `after:` | Date filter | `"AI regulation" after:2025-06-01` |
 | `before:` | Date filter | `"AI regulation" before:2026-01-01` |
-| `AROUND(X)` | Proximity (terms within X words) | `"Delivery Hero" AROUND(3) "AI training"` |
-| `*` | Wildcard | `"VP of * at Delivery Hero"` |
+| `AROUND(X)` | Proximity (terms within X words) | `"Acme Corp" AROUND(3) "AI training"` |
+| `*` | Wildcard | `"VP of * at Acme Corp"` |
 
 ### Boolean Combinations
 
@@ -163,16 +163,16 @@ For any topic, construct at minimum:
 2. **Angle shift** — Same topic, different framing (who/what/why/when perspective)
 3. **Counter-evidence query** — What would prove the opposite?
 
-**Example: "Is Delivery Hero investing in AI training?"**
+**Example: "Is Acme Corp investing in AI training?"**
 ```
 # Query 1 (direct)
-"Delivery Hero" "AI training" OR "AI upskilling" 2026
+"Acme Corp" "AI training" OR "AI upskilling" 2026
 
 # Query 2 (angle shift — hiring signals)
-"Delivery Hero" site:linkedin.com/jobs "machine learning" OR "AI" Berlin
+"Acme Corp" site:linkedin.com/jobs "machine learning" OR "AI" Berlin
 
 # Query 3 (counter-evidence)
-"Delivery Hero" "cost cutting" OR "layoffs" OR "restructuring" 2026
+"Acme Corp" "cost cutting" OR "layoffs" OR "restructuring" 2026
 ```
 
 ### Synonym Expansion
