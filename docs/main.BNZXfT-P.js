@@ -1,3 +1,4 @@
+/* Bundles Chart.js (MIT), three.js (MIT), Lenis (MIT), GSAP (Standard "No Charge" GSAP License). Full texts: THIRD-PARTY-LICENSES.md */
 var Do=Object.defineProperty;var Ao=(i,t,e)=>t in i?Do(i,t,{enumerable:!0,configurable:!0,writable:!0,value:e}):i[t]=e;var M=(i,t,e)=>Ao(i,typeof t!="symbol"?t+"":t,e);import{g as rt,S as ct,L as Co,P as Oo}from"./chunks/particles.DtZgSRQA.js";/*!
  * @kurkle/color v0.3.4
  * https://github.com/kurkle/color#readme

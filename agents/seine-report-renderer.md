@@ -84,6 +84,7 @@ Write a single self-contained HTML file with this structure:
   <!-- 6. Sources table -->
   <!-- 7. Pipeline timeline gantt -->
   <!-- 8. Footer -->
+  <!-- Chart.js (c) Chart.js Contributors - MIT License - https://github.com/chartjs/Chart.js/blob/master/LICENSE.md -->
   <script>/* Chart.js 4.x UMD minified — BUNDLED INLINE */</script>
   <script>/* Chart configs + IntersectionObserver scroll reveal */</script>
 </body>
@@ -99,9 +100,10 @@ Write({ file_path: "{artifact_dir}/09-dossier.html", content: "<complete_html>" 
 ## Chart.js Bundling
 
 1. Use WebFetch to get Chart.js 4.x UMD minified: `https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js`
-2. Embed the ENTIRE minified source as an inline `<script>` block
-3. Create chart instances using Chart.js config objects
-4. Apply Seine theme to all charts: dark backgrounds, rgba grid lines, Inter font
+2. Immediately above the inline `<script>` block, add the MIT notice comment: `<!-- Chart.js (c) Chart.js Contributors - MIT License - https://github.com/chartjs/Chart.js/blob/master/LICENSE.md -->`. This is required every time Chart.js is redistributed — do not omit it, even for one-off dossiers.
+3. Embed the ENTIRE minified source as an inline `<script>` block
+4. Create chart instances using Chart.js config objects
+5. Apply Seine theme to all charts: dark backgrounds, rgba grid lines, Inter font
 
 Example config pattern:
 ```javascript
@@ -240,6 +242,7 @@ All charts MUST use `maintainAspectRatio: false` — do not omit it.
 
 - **NEVER fabricate data** — only chart values from artifact JSON files
 - **NEVER use external JS** — Chart.js MUST be bundled inline (Google Fonts CSS link is the only external resource)
+- **ALWAYS carry the Chart.js MIT notice** — the HTML comment from "Chart.js Bundling" step 2 must precede the bundled script every time
 - **ALWAYS use evidence labels exactly** — SOLID/SOFT/SHAKY/UNKNOWN, never paraphrase
 - **ALWAYS handle partial pipelines** — render what exists, show FAIL indicators
 - **ALWAYS use clickable citations** — `<a href="#source-N" class="cite">[N]</a>`, never plain `<span>`
