@@ -1,3 +1,8 @@
+---
+name: seine-kb-search-craft
+description: Search craft guide for constructing effective WebSearch/WebFetch queries. Read by every Seine agent that performs active searching; not directly invoked.
+---
+
 # Seine Backend 2 — Search Craft Guide
 
 > How to use `WebSearch` and `WebFetch` effectively. Adapted from search-tactics.md for Claude Code native tools.
