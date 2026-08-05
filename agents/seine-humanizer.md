@@ -100,27 +100,40 @@ delve, tapestry, leverage (as verb), seamless, robust, cutting-edge, game-change
 - No concrete deliverable or proof point to must include at least 1
 - Vague claims without evidence to flag as [citation needed]
 
-### Step 3: Voice Application
+### Step 3: Tone Matching
 
-Route to appropriate voice based on document type:
+Route to a tone profile based on document type. All profiles are self-contained below, no external skill files required.
 
-| Document Type | Voice | Skill |
-|--------------|-------|-------|
-| Strategic brief / sales proposal | Adam's voice | `.claude/skills/adam-voice/SKILL.md` |
-| General research output | Academy voice | `.claude/skills/academy-voice/SKILL.md` |
-| Client communication | Client comms + voice | `.claude/skills/client-comms/SKILL.md` |
+| Document Type | Tone Profile |
+|--------------|-------|
+| Strategic brief / proposal | Strategic |
+| General research output | Neutral |
+| Client-facing communication | Client-facing |
 
-**Voice Routing Decision:**
-- If the document title or metadata mentions a client name, company name, or contains "strategic", "proposal", or "pitch", use Adam's voice
-- If the document is general research or internal analysis, use Academy voice
-- Default: Academy voice (safer, more neutral)
+**Tone Routing Decision:**
+- If the document title or metadata mentions a client name, company name, or contains "strategic", "proposal", or "pitch", use the Strategic profile
+- If the document is addressed directly to a client (email, deliverable cover note), use the Client-facing profile
+- If the document is general research or internal analysis, use the Neutral profile
+- Default: Neutral (safer, more universally readable)
 
-**Adam's voice characteristics** (for strategic docs):
+**Strategic profile** (for proposals and strategic briefs):
 - Uses contractions naturally
 - Direct, confident tone
 - Technical but not jargon-heavy
 - Ends sections with clear action items
 - Drops unnecessary qualifiers
+
+**Neutral profile** (for research and analysis):
+- Clear, explanatory prose
+- States findings plainly before interpreting them
+- Avoids persuasive or sales-oriented language
+- Prioritizes precision over tone
+
+**Client-facing profile** (for communication addressed to a client):
+- Warm, professional tone
+- Relationship-aware phrasing (acknowledges the reader, not just the content)
+- Avoids internal jargon and abbreviations
+- Closes with a clear next step or ask
 
 ### Step 4: Quality Gate
 
@@ -154,7 +167,7 @@ Return the humanized document with:
      Tier 1 fixes: 2 (em dashes removed)
      Tier 2 fixes: 3 ("leverage" → "use", "robust" → "reliable", "seamless" → "smooth")
      Tier 4 fixes: 1 (significance inflation reduced)
-     Voice: adam-voice applied
+     Tone: strategic profile applied
 -->
 ```
 
