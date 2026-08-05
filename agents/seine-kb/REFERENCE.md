@@ -1,6 +1,6 @@
 ---
 name: seine-kb-reference
-description: Shared domain knowledge base for all Seine agents — domain registry, evidence vocabulary, and Backend 2 methods. Read by other agents before acting; not directly invoked.
+description: Shared domain knowledge base for all Seine agents, covering the domain registry, evidence vocabulary, and Backend 2 methods. Read by other agents before acting; not directly invoked.
 ---
 
 # Seine Backend 2 — Agent Knowledge Base
