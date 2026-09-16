@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health × Defence in Europe, 2026: who funds it, who builds it, where the white space is | AI Enablement Academy</title>
+<meta name="description" content="Full research report: Health × Defence in Europe, 2026: who funds it, who builds it, where the white space is">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1565c0; --navy:#1a2332;
+  --ink:#2b3650; --mute:#6b7a99; --hair:#dfe4ee; --tint:#f4f7fc; --zebra:#f6f8fb;
+  --sans:"IBM Plex Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --disp:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--sans); font-size:16px; line-height:1.55; color:var(--ink);
+  background:#eef1f6; -webkit-font-smoothing:antialiased;
+}
+.sheet{max-width:900px; margin:0 auto; background:#fff; padding:44px 52px 56px;
+       box-shadow:0 1px 2px rgba(26,35,50,.08), 0 18px 48px rgba(26,35,50,.10); border-radius:2px}
+p{margin:0 0 14px}
+a{color:var(--blue); text-decoration:none; border-bottom:1px solid rgba(21,101,192,.35)}
+strong{font-weight:600; color:var(--navy)}
+sup.cit{font-size:.68em; font-weight:600; color:#93a0b8; vertical-align:.4em; margin-left:1px}
+
+.topnav{font-family:var(--disp); font-weight:700; font-size:12px; letter-spacing:.04em;
+        text-transform:uppercase; color:var(--mute); margin-bottom:18px}
+.topnav a{color:var(--blue); border-bottom:none}
+.topnav a:hover{border-bottom:1px solid rgba(21,101,192,.35)}
+.topnav .sep{margin:0 8px; color:var(--hair)}
+.topnav .here{color:var(--navy)}
+
+.kicker{font-family:var(--disp); font-weight:800; font-size:12px; letter-spacing:.2em;
+        text-transform:uppercase; color:var(--blue); margin:0 0 8px}
+.title{font-family:var(--disp); font-weight:900; font-size:34px; line-height:1.1; letter-spacing:-.02em;
+       color:var(--navy); margin:0 0 16px}
+.note{font-size:13.5px; line-height:1.55; color:var(--mute); margin:0 0 6px; font-family:var(--sans)}
+.ladder{display:flex; gap:4px; height:6px; margin:18px 0 32px}
+.ladder span{display:block; border-radius:1px}
+
+.sec{font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.1em; text-transform:uppercase;
+     color:var(--navy); margin:40px 0 14px; display:flex; align-items:center; gap:10px}
+.sec-tick{display:inline-block; width:22px; height:5px; background:var(--blue); flex:0 0 auto}
+.sub{font-family:var(--disp); font-weight:700; font-size:16px; color:var(--navy); margin:22px 0 8px}
+
+.tbl-wrap{overflow-x:auto; margin:0 0 16px}
+.tbl{width:100%; border-collapse:collapse; font-size:14px; line-height:1.4}
+.tbl thead th{background:var(--navy); color:#fff; font-family:var(--disp); font-weight:700; font-size:11px;
+              letter-spacing:.06em; text-transform:uppercase; text-align:left; padding:8px 10px}
+.tbl td{padding:8px 10px; border-bottom:1px solid var(--hair); vertical-align:top}
+.tbl tbody tr:nth-child(even){background:var(--zebra)}
+.tbl-dense{font-size:12.5px}
+
+ul.bul{margin:0 0 14px; padding-left:22px}
+ul.bul li{margin-bottom:8px}
+ol.steps{margin:0 0 14px; padding-left:24px}
+ol.steps li{margin-bottom:8px}
+
+ol.srcs{list-style:none; margin:0; padding:0; font-size:13px; line-height:1.4}
+li.src{display:flex; gap:10px; padding:7px 0; border-bottom:1px solid #eef1f7}
+.src-n{font-family:var(--disp); font-weight:800; font-size:12px; color:var(--blue); min-width:26px;
+       text-align:right; padding-top:1px; flex:0 0 auto}
+.src-b{display:block; min-width:0}
+.src-t{display:block; color:var(--navy)}
+.src-u{display:block; font-size:11px; color:var(--mute); overflow-wrap:anywhere; border-bottom:none; margin-top:2px}
+.chip{display:inline-block; font-family:var(--disp); font-weight:800; font-size:9px; letter-spacing:.08em;
+      padding:2px 5px; border-radius:2px; vertical-align:1px; margin-left:4px; color:#fff}
+.chip-high{background:#2e7d32} .chip-medium{background:#ef6c00} .chip-low{background:#c62828}
+
+.screen-foot{max-width:900px; margin:20px auto 0; font-size:12px; color:var(--mute); text-align:center; padding-bottom:40px}
+
+@media (max-width:700px){
+  body{padding:0}
+  .sheet{padding:28px 20px 34px; box-shadow:none; border-radius:0}
+  .title{font-size:26px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <nav class="topnav">
+    <a href="./">Dossier</a><span class="sep">&middot;</span><a href="./brief.html">Client brief</a><span class="sep">&middot;</span><span class="here">Full report</span>
+  </nav>
+  <p class="kicker">Full report</p>
+  <h1 class="title">Health × Defence in Europe, 2026: who funds it, who builds it, where the white space is</h1>
+  <p class="note">Pipeline: siege depth | 4 discovery agents, 2 gates, adversarial and confidence passes | 200 sources (110 HIGH, 81 MEDIUM, 9 LOW) | 35 calibrated findings</p>
+<p class="note">Evidence vocabulary: SOLID (verified, multi-source) | SOFT (single credible source) | SHAKY (inferred or weak) | UNKNOWN</p>
+  <div class="ladder"><span style="background:#e53935;flex:7"></span><span style="background:#f57c00;flex:6.4"></span><span style="background:#fbc02d;flex:5.8"></span><span style="background:#66bb6a;flex:5.2"></span><span style="background:#29b6f6;flex:4.6"></span><span style="background:#5c6bc0;flex:4"></span><span style="background:#7e57c2;flex:3.4000000000000004"></span></div>
+<h2 class="sec"><span class="sec-tick"></span>1. Summary</h2>
+<ul class="bul"><li>The European Defence Fund has committed EUR 222.7m to its defence medical, CBRN, biotech and human-factors category across 2021 to 2026, or 3.50 percent of the EUR 6,367.46m envelope <sup class="cit">[4]</sup>.</li><li>Of the EUR 40m in that category for 2026, EUR 15m is openly competed and EUR 25m is awarded without a call to the incumbent consortium <sup class="cit">[4]</sup>.</li><li>DG HERA's 2026 work plan carries roughly EUR 571m, about 14 times the EDF medical category that year, and none of it is defence-badged <sup class="cit">[6]</sup>.</li><li>NATO DIANA selected 150 companies from 3,680 submissions across ten 2026 challenge areas, one of which, Human Resilience and Biotechnologies, is health-shaped <sup class="cit">[8]</sup>.</li><li>The EUDIS Business Accelerator's published cohort roster returned 60 entries on 16 September 2026; two earlier counts inside this run returned 66 and 71, so the denominator is unstable and no percentage is published here. Three companies are strictly medical; five have any health or human-performance angle <sup class="cit">[5]</sup>.</li><li>Twenty-eight companies carry a named health-defence product or programme role; eight have an evidenced buyer relationship, of which five rest on a named armed force or government order, three on trade press alone (Avilus, The AO, Tencore), and one carries a published contract value, GBP 7.8m <sup class="cit">[136]</sup>.</li><li>No health, medical or biotech company appears among the eleven named deals in the leading early-2026 European defence and resilience roundup, and the largest mental-resilience round in the sweep was EUR 130,000 pre-seed. Evidence label SHAKY, one commercial league table <sup class="cit">[151]</sup> <sup class="cit">[116]</sup>.</li><li>Four of the five priorities in NATO's Medical Action Plan are regulatory, organisational or logistical rather than product-shaped, and no European programme accelerates that kind of work <sup class="cit">[15]</sup>.</li></ul>
+<h2 class="sec"><span class="sec-tick"></span>2. The money is bimodal, in instrument type</h2>
+<p>The split is in instrument type, not in addressable amount [Adversarial: downgraded]. On one side sit large civilian health-security envelopes, neither defence-badged nor dual-use-earmarked. HERA's 2026 work plan runs to roughly EUR 571m: about EUR 424.5m from EU4Health, EUR 146.5m from Horizon Europe, EUR 292.5m in advanced medical countermeasure research and development, EUR 195m in open strategic autonomy <sup class="cit">[6]</sup>. HERA Invest, non-dilutive venture debt through the European Investment Bank, takes a EUR 30m top-up and three new loan agreements in 2026 against a forecast of EUR 200m by 2027. Only the EUR 30m is committed <sup class="cit">[6]</sup>.</p>
+<p>On the other side sit small defence-badged instruments with explicit medical lines. The EDF category runs EUR 57.8m in 2021, EUR 24.9m in 2022, EUR 40m in 2023, EUR 25m in 2024, EUR 35m in 2025 and EUR 40m in 2026, with the 2027 cell in Appendix 4 blank <sup class="cit">[4]</sup>. It peaked in year one, bottomed in 2022, and has risen three years running to a figure that ties 2023 rather than exceeding it. The 2026 EUR 40m is EUR 6.5m and EUR 18.5m to medical countermeasures alliance research and development, both pre-allocated by specific grant agreement, plus EUR 15m to openly competed CBRN decontamination <sup class="cit">[4]</sup>. The newcomer-addressable figure is EUR 15m.</p>
+<p>Medifence, committed in the EU Medical Countermeasures Strategy and taken up in HERA's 2026 plan, is the only named civil-military health instrument, covering countermeasure shortlists, antitoxin platforms, joint procurement and stockpiling, and access to wound care and medical devices in civilian and military settings <sup class="cit">[6]</sup> <sup class="cit">[22]</sup>. It carries no disclosed envelope, call identifier or deadline in either primary document.</p>
+<p>The European Innovation Council opened to defence and dual-use on 17 June 2026, with grants to EUR 2.5m and equity to EUR 30m <sup class="cit">[12]</sup>. Two scale-up windows exist and they differ. The EUR 100m STEP Scale Up Defence names air and missile defence, drones and counter-drones, among other defence fields, and does not name health, medtech or biotech <sup class="cit">[21]</sup>. The general EUR 300m STEP Scale Up lists Biotechnologies among three eligible areas and was never defence-restricted; its 2026 dates were not established in this run <sup class="cit">[110]</sup>.</p>
+<p>DIANA and EUDIS accelerate, they do not fund. DIANA pays roughly EUR 100,000 in Phase 1 and up to EUR 300,000 in Phase 2, evidenced on a national delivery-partner page rather than a published 2026 term (SOFT) <sup class="cit">[115]</sup>. EUDIS pays EUR 120,000 per company plus EUR 50,000 to the top three, on a EUR 6.2m indicative budget <sup class="cit">[7]</sup> <sup class="cit">[117]</sup>. Neither is procurement. Neither the EDA's innovation hub, nor Ukraine's Brave1, nor the national hubs in Germany, the Netherlands, Poland, Denmark and France publishes a medical funding line open to external companies (SOFT, absence of evidence) <sup class="cit">[26]</sup> <sup class="cit">[2]</sup>. Germany's Cyber Innovation Hub does ship military-medical digitalisation, so this is a missing funding line, not missing activity <sup class="cit">[19]</sup>.</p>
+<h2 class="sec"><span class="sec-tick"></span>3. Who is buying, and who is not</h2>
+<p>Every verified purchase order in this dataset was issued by a defence ministry [Adversarial: downgraded]. The UK Ministry of Defence awarded Leeds-based The Phoenix Partnership GBP 2.5m for Mercury, a secure mobile record for frontline medics, then GBP 7.8m for the Armed Forces medical record under Programme Cortisone <sup class="cit">[136]</sup>. Norway's Aristeia received an order for hundreds of mechanical tourniquets from the Ukrainian government, value not published <sup class="cit">[167]</sup>. Those are the two procurement relationships in this corpus with a named buyer and a named order. Avilus was reported in July 2026 trade press as selected for the Bundeswehr's Uncrewed Qualified Airborne Patient Transport project. No award is confirmed, the strongest source describes only ongoing evaluation, and two of four original sources are unretrievable (SOFT) <sup class="cit">[112]</sup> <sup class="cit">[114]</sup>.</p>
+<p>Civilian health systems hold the mandate, the planning figures and the largest unfunded requirement, and none of them is a buyer. France instructed regional health agencies to have hospitals ready by March 2026 for 10,000 to 50,000 wounded <sup class="cit">[121]</sup>. Germany's Surgeon General plans on roughly 1,000 wounded per day against about 15,000 beds <sup class="cit">[160]</sup>. The Netherlands is buying rail carriages to convert into mobile hospitals and recruiting intensivists across 14 civilian hospitals <sup class="cit">[143]</sup> <sup class="cit">[144]</sup>. Three documented national cases, not a rule (SOFT) [Skeptic: weakened]. The one health-budget award in the sweep, USIL Therapeutics' EUR 5.2m through EU4Health administered by HERA, scored 93 out of 100 against a 70-point threshold and is a grant, not a purchase <sup class="cit">[128]</sup>. The health budget is the least-contested grant door, not a procurement door.</p>
+<p>The demand signal is published. NATO's Medical Action Plan, the focus of the 65th COMEDS Plenary in June 2026, sets five priorities: regulatory frameworks and legislation, workforce, mass casualty planning, patient evacuation, medical logistics <sup class="cit">[15]</sup>. The NATO Blood Panel's March 2026 correspondence in The Lancet reclassifies blood as a strategic capability and puts the bottleneck in civilian personnel, equipment and processing capacity rather than donor numbers, asking civilian blood systems to surge-plan and invest in freeze-dried plasma and extended-shelf-life products <sup class="cit">[29]</sup> <sup class="cit">[42]</sup>. NSPA is aggregating Alliance demand for dried plasma, which presupposes supply <sup class="cit">[125]</sup>. The claim that no European blood-product supplier exists collapsed under testing; only "no European synthetic-blood or haemoglobin-based-oxygen-carrier startup was identified in this sweep" survives [Skeptic: collapsed].</p>
+<p>Ukraine is the qualification lane. Unmanned ground vehicles ran more than 100,000 logistics and evacuation missions in 2026 to date, and operating units grew from 117 at the end of 2025 to 230 by mid-2026 (SOFT, one trade outlet reporting Ukrainian military figures) <sup class="cit">[127]</sup>. A product earns casualty data and a ministry codification there faster than through any Western pathway <sup class="cit">[81]</sup>. The capital underneath all of this is grant capital, and that belongs in the report as a risk rather than an opportunity [Adversarial: rejected]. Any model that depends on portfolio companies raising follow-on rounds is entering a market that has not supplied them.</p>
+<h2 class="sec"><span class="sec-tick"></span>4. Who is building it</h2>
+<p>Company evidence is weaker than programme evidence. Of 35 calibrated findings, 18 are SOLID and 15 of those are funder or programme facts from primary Commission and NATO documents; every company-level claim but four lands SOFT or below (pipeline artifact `05-research/phase-c-confidence.json`).</p>
+<p><strong>Casualty-care digitisation</strong> is the only sub-lane with verified procurement on both sides. The AO (Berlin, Germany; fundraising, stage undisclosed) digitises the NATO Tactical Combat Casualty Care card, streaming vitals into a ruggedised record, deployed or deploying with Ukraine's 112th and 92nd Brigades and a planned 60 Hospitallers ambulances (SOFT) <sup class="cit">[168]</sup>. Demand is The Phoenix Partnership's two UK contracts <sup class="cit">[136]</sup>. Note the winner profile: the larger award went to an incumbent civilian electronic-record vendor, not a defence startup.</p>
+<p><strong>Medical evacuation and logistics autonomy</strong> is the best-validated sub-lane technically and the least converted commercially [Adversarial: qualified]. iMEDCAP, an EDF 2022 research action worth EUR 24,885,861.25 at 100 percent EU funding, coordinated by the Technical University of Munich with 22 named entities across nine countries on the official factsheet, ran a complete autonomous casualty chain at Vigorous Warrior 2026 in Estonia on 12 June 2026 <sup class="cit">[9]</sup> <sup class="cit">[17]</sup> <sup class="cit">[11]</sup>. The consortium describes itself as having 24 partners; the official factsheet lists 22, and 22 is the figure to use for any member list <sup class="cit">[9]</sup>. Vendors: ARX Robotics (Munich, Germany; Gereon UGVs with six European armed forces, 30 sent to Ukraine, July 2026 joint venture with Ukraine's Roboneers) <sup class="cit">[130]</sup>, Milrem Robotics (Tallinn, Estonia) <sup class="cit">[197]</sup>, Tencore (Ukraine) <sup class="cit">[188]</sup>, Avilus (Germany) <sup class="cit">[112]</sup>, Wingcopter (Germany) <sup class="cit">[157]</sup>, Avy (Netherlands, medical BVLOS corridors) <sup class="cit">[195]</sup>, Flowcopter (Edinburgh, Scotland; FC-100 flown at Sabre Strike 2026, no procurement announced) <sup class="cit">[176]</sup>. These are robotics and uncrewed-systems companies entering health, not health companies entering defence.</p>
+<p><strong>Biosecurity and CBRN countermeasures</strong> holds the only venture round of scale. Portal Biotech (London, UK) raised a USD 35m Series A on 30 June 2025 co-led by the NATO Innovation Fund and Earlybird <sup class="cit">[16]</sup>. USIL Therapeutics (Luxembourg) develops acute radiation syndrome countermeasures on a EUR 5.2m EU4Health grant, targeting a 2027 filing <sup class="cit">[128]</sup>. Finland confirmed two DIANA 2026 selections: Aboa Space Research, building a handheld AI-assisted fluorescence microscope for field CBRN, wound-infection and radiation assessment, and SEATOM Technologies <sup class="cit">[36]</sup>. Avivo Biomedical self-announced a selection <sup class="cit">[194]</sup>. Bionys (Italy) commercialises SepTech, a EUR 2.5m EIC point-of-care sepsis and antimicrobial-resistance test <sup class="cit">[154]</sup> <sup class="cit">[103]</sup>.</p>
+<p><strong>Blood, plasma and haemostatics</strong> has a SOLID requirement and a thin supply picture. Aristeia (Norway, founded 2015) is the clearest device case <sup class="cit">[166]</sup>, and the UK MoD and Medical Research Council opened a GBP 50m advanced blood products programme in November 2025 <sup class="cit">[169]</sup>. No European supplier list was assembled in this run.</p>
+<p><strong>Human performance, readiness and mental resilience</strong> is a demand observation, not a sub-lane with a supply side [Adversarial: downgraded]. Denmark's Military Mental Training, built by the University of Copenhagen with the Danish Veteran Centre, becomes fixed in basic training in 2026 and is bought by a training command <sup class="cit">[20]</sup>. Germany's Act to Modernize Military Service entered into force on 1 January 2026 and extends mandatory medical examination to all men born in 2008 or later from 1 July 2027, a population-scale screening problem procured by military career centres <sup class="cit">[25]</sup>. Medical personnel are among the most acute shortages in EUROMIL's 2026 survey across 11 countries <sup class="cit">[118]</sup>. The supply answer is public: the sweep found one venture-funded European company with a forces go-to-market, BRAVR (Amsterdam, Netherlands), at EUR 130,000 pre-seed (SOFT) <sup class="cit">[116]</sup>.</p>
+<p><strong>Secure health data and telemedicine</strong> has one named company, The Phoenix Partnership, and a dated governance seam: the European Health Data Space requires Health Data Access Bodies by 25 March 2027 and, on our reading, does not address military health data (MEDIUM-trust advisory, and the military-data point is our inference rather than the advisory's own scope, re-verify against Regulation (EU) 2025/327) <sup class="cit">[120]</sup>.</p>
+<h2 class="sec"><span class="sec-tick"></span>5. The accelerator map and the white space</h2>
+<p>DIANA is the only pan-Alliance accelerator naming a health challenge. Its 2026 Human Resilience and Biotechnologies challenge asks for biomedical, bioengineered, synthetic and computational dual-use solutions including synthetic blood and agents against multi-drug-resistant organisms <sup class="cit">[1]</sup> <sup class="cit">[8]</sup>. The six 2027 challenges name neither medicine nor biotechnology in their titles, but Challenge 1, Human Survivability, names AI-assisted triage, routing and telemedicine support <sup class="cit">[113]</sup> <sup class="cit">[158]</sup>. The medical content moved into a survivability challenge; it was not dropped.</p>
+<p>EUDIS names health through technology theme 5, which lists medical triage, casualty-tracking automation and wearable biosensors <sup class="cit">[7]</sup>. The realised portfolio is three strictly medical and five loosely health-adjacent companies. The denominator is unstable and that instability is the finding: the live roster returned 60 entries on 16 September 2026, and two earlier counts inside this same run returned 66 and 71 <sup class="cit">[5]</sup>. Raw counts with a retrieval date appear here instead of a percentage.</p>
+<p>National hubs are health-absent in their published scope: Germany's Bundeswehr Innovation Centre <sup class="cit">[76]</sup>, the Netherlands' MIND Tech Centre at TU Delft <sup class="cit">[50]</sup>, Poland's PGZ Start-up <sup class="cit">[179]</sup>, Defence Tech Denmark and Innovation Fund Denmark's defence instruments <sup class="cit">[141]</sup> <sup class="cit">[74]</sup>, and France's ASTRID dual-use route at a maximum of EUR 400,000 per project <sup class="cit">[40]</sup>. No DIANA accelerator site is health-specialised, with the Estonian site the only one listing healthtech; that rests on 12 of 16 sites and is not a complete count (SOFT) <sup class="cit">[30]</sup> <sup class="cit">[54]</sup>.</p>
+<p>The US comparison should carry no arithmetic. The Medical Technology Enterprise Consortium reports more than 800 members, 384 projects awarded, USD 1.6bn federal funding awarded, USD 1.2bn follow-on and 150 products in pipeline <sup class="cit">[10]</sup>. Its operating period is not disclosed in the retrieved source, so no rate or multiple can be computed against the EDF's EUR 222.7m over six years [Adversarial: downgraded]. The broker half of that model, membership, requirement translation and matchmaking, is addressable. The half that moved the money is an Other Transaction Authority contracting instrument, which has no European equivalent and no single defence or health customer to contract with. The NATO Military Medicine Centre of Excellence has convened since 2009 with an innovation branch, an industry-open workshop and the customer relationship, and has no cohort, no instrument and no deal flow <sup class="cit">[89]</sup> <sup class="cit">[87]</sup>.</p>
+<p>The defensible white space is regulatory and clinical-evidence expertise [Adversarial: upheld]. There is no blanket military carve-out from the Medical Device Regulation, and Article 346(1)(b) TFEU is a narrow case-by-case derogation applied strictly since Johnston, so a battlefield medical device faces the full civilian conformity route and a defence procurement route in parallel <sup class="cit">[18]</sup>. The Defence Readiness Omnibus of June 2025 amended REACH, CLP and the Biocidal Products Regulation and clarified the REACH defence exemption while creating no equivalent pathway in the MDR <sup class="cit">[49]</sup>. Two independent legal instruments converge on a constraint the EU's own simplification drive declined to relieve. Two conditions apply: this is a service line, not a portfolio thesis, because navigating a notified-body capacity shortage does not shorten it; and the widely quoted MDR refusal count is dropped here as single-sourced to a commercial consultancy blog and all-sector <sup class="cit">[122]</sup>. Separately, four of the five NATO Medical Action Plan priorities are regulatory, workforce, planning and logistics work, and every European accelerator selects on technology readiness level and on a product (SOFT) <sup class="cit">[15]</sup>.</p>
+<p><strong>Survivorship caveat.</strong> Every white-space claim above is an absence claim, and absence claims had the worst survival record in this run: of 22 claims tested, 12 did not survive as stated, 5 collapsing and 7 weakening (pipeline artifact `05-research/phase-b-skeptic.json`). Nobody searched for a European military-medical consortium that was attempted and wound down, and no medtech cluster or health institute was asked why it runs no dual-use programme in 2026. The white space is inferred from what adjacent organisations do not publish, not from anything any of them said.</p>
+<h2 class="sec"><span class="sec-tick"></span>6. Funding windows as of 16 September 2026</h2>
+<div class="tbl-wrap"><table class="tbl tbl-dense"><thead><tr><th>Programme</th><th>Window</th><th>Status</th><th>Health relevance</th><th>Source</th></tr></thead><tbody>
+<tr><td>EDF 2026 call</td><td>Deadline 29 September 2026</td><td>Open, closing</td><td>EUR 15m CBRN decontamination competed, EUR 25m pre-allocated</td><td><sup class="cit">[4]</sup> <sup class="cit">[119]</sup></td></tr>
+<tr><td>EDF 2027 work programme</td><td>Not published</td><td>Unknown</td><td>2027 cell blank in Appendix 4</td><td><sup class="cit">[4]</sup> <sup class="cit">[60]</sup></td></tr>
+<tr><td>EIC STEP Scale Up Defence, EUR 100m</td><td>1 July to 28 October 2026</td><td>Open</td><td>Named sectors exclude health and biotech</td><td><sup class="cit">[21]</sup></td></tr>
+<tr><td>EIC STEP Scale Up general, EUR 300m</td><td>Not established</td><td>Unknown</td><td>Biotechnologies one of three eligible areas</td><td><sup class="cit">[110]</sup></td></tr>
+<tr><td>EIC dual-use window</td><td>30 June to 28 October 2026, opening disputed</td><td>Open</td><td>Grants to EUR 2.5m, equity to EUR 30m</td><td><sup class="cit">[12]</sup></td></tr>
+<tr><td>NATO DIANA 2027 cohort</td><td>Opened 1 June, closed 3 July 2026</td><td>Closed</td><td>Human Survivability names triage and telemedicine</td><td><sup class="cit">[113]</sup></td></tr>
+<tr><td>NATO DIANA 2028 cohort</td><td>Not published</td><td>Unknown</td><td>Next actionable entry point</td><td><sup class="cit">[113]</sup></td></tr>
+<tr><td>EUDIS Accelerator, Autumn 2026</td><td>Opened 13 April, closed 30 May 2026</td><td>Closed</td><td>Technology theme 5</td><td><sup class="cit">[95]</sup> <sup class="cit">[7]</sup></td></tr>
+<tr><td>Innovation Fund Denmark, Grand Solutions defence</td><td>Deadline 1 September 2026</td><td>Closed</td><td>No medical track named</td><td><sup class="cit">[74]</sup></td></tr>
+<tr><td>NATO Medical Innovation Workshop 2026</td><td>1 to 3 September 2026</td><td>Closed</td><td>Abstracts only, no funding instrument</td><td><sup class="cit">[87]</sup></td></tr>
+<tr><td>Dual-use export consultation, Reg. (EU) 2021/821</td><td>Not established</td><td>Unknown</td><td>Policy door for dual-use biotechnology. Evaluation report due between 10 September 2026 and 10 September 2028, completion targeted for Q4 2026</td><td><sup class="cit">[44]</sup> <sup class="cit">[150]</sup></td></tr>
+<tr><td>HERA end-2026 cluster: roadmaps, Industry Days, Diagnostics Hub, CBRN exercise</td><td>End 2026</td><td>Scheduled</td><td>Civil-military components, with EU Integrated Resolve 2026</td><td><sup class="cit">[6]</sup></td></tr>
+<tr><td>European Health Data Space</td><td>Access Bodies by 25 March 2027</td><td>Milestone</td><td>Governance seam for military health data</td><td><sup class="cit">[120]</sup></td></tr>
+</tbody></table></div>
+<p>DIANA accepts collaborative proposals provided every member company meets eligibility, under one designated lead company for contracting and reporting. Universities and non-profit groups are "not yet" eligible, and the band is typically TRL 4 to 7 with a carve-out for TRL 8 and above in civilian applications <sup class="cit">[113]</sup> [Adversarial: rejected, referee docket overturned]. A non-profit body can broker a consortium of eligible company members under a lead company. It cannot participate as itself, and its academic partners cannot join the consortium.</p>
+<h2 class="sec"><span class="sec-tick"></span>7. What we could not verify</h2>
+<ul class="bul"><li><strong>The DIANA 2026 Human Resilience and Biotechnologies roster.</strong> Roughly 15 selections, four third-party confirmed. The page returns HTTP 403 to automated fetch and renders lists client-side, the press-release PDF carries only challenge names, and no browser session could be established. Any company list here is biased toward self-announcers <sup class="cit">[1]</sup> <sup class="cit">[8]</sup>.</li><li><strong>Poland, the Baltic states, Switzerland and most of the Nordics.</strong> Poland and the Baltics appear only through Milrem and MAWI Solutions via iMEDCAP, despite being the largest SAFE borrowers and exercise hosts. Swiss companies are absent entirely. Nordic coverage stops at Denmark and Finland's VTT site.</li><li><strong>PESCO project UNATIS.</strong> Indeterminate: one low-tier aggregator against silence in the coordinating nation's own page. If real, a second EU autonomous-medevac vehicle alongside iMEDCAP.</li><li><strong>Delta Biosciences.</strong> Identity unresolved between a pivot and a name collision. The EUDIS organoid product must not be attached to the Vilnius drug-discovery entity of the same name. The medical count holds either way.</li><li><strong>The Avilus and Bundeswehr relationship.</strong> Unverified from two of four original sources across four attempts. Needs a German-language procurement source or direct company confirmation before contract-adjacent language.</li><li><strong>Security clearance.</strong> UNKNOWN. Nothing in the corpus addresses personnel clearance, facility clearance or ownership restrictions for EDF, EUDIS, DIANA or national participation. It is the largest unexamined entry barrier and is not reasoned about here in either direction.</li></ul>
+<h2 class="sec"><span class="sec-tick"></span>8. Method</h2>
+<p>Every figure in this section comes from the pipeline artifacts named in the header. Seine siege-depth pipeline, run 16 September 2026 over 9,561 seconds, about 2 hours 39 minutes. Phase A ran four discovery agents in parallel: hunters for funders, startups and white space, plus a scout for weak signals. Gate A returned PASS_WITH_NOTES at 0.8192 and flagged three cross-shard contradictions. Phase B ran a skeptic and a referee: the skeptic tested 22 claims, 10 surviving, 5 collapsing, 7 weakening; the referee adjudicated 21 conflicts, affirming 5, qualifying 7, rejecting 7 and leaving 2 indeterminate. Gate B returned PASS_WITH_NOTES at 0.8707, re-extracted the EDF series from the primary PDF, and placed 10 claims on a do-not-lead-with list, all excluded here or restated in salvaged form.</p>
+<p>Phase C ran an adversarial review and a confidence quantifier. The adversarial pass applied a five-step protocol to 14 load-bearing conclusions, producing 24 attacks, 5 negations and 8 failure scenarios, and returned 3 upheld, 4 qualified, 4 downgraded and 3 rejected. Its verdicts override the confidence pass wherever they conflict, and every reword it required is applied above. The confidence pass scored 35 findings on (evidence × 0.40) + (source quality × 0.25) + (recency × 0.20) + (agreement × 0.15): 18 SOLID, 15 SOFT, 2 SHAKY, 0 UNKNOWN, mean 0.766, standard deviation 0.126, range 0.48 to 0.92. It ran before the adversarial output existed, so its agreement scores fold in both gates, the skeptic and the referee, but not the adversarial reviewer.</p>
+<p>An independent verification pass on 16 September 2026 re-fetched 15 citations and produced six corrections, all applied; see `12-verification.md` in the artifacts. Research roles ran on Opus, gates and rendering on Sonnet. The compiled list holds 200 deduplicated sources: 110 HIGH, 81 MEDIUM, 9 LOW, none disqualified. The web-search budget was exhausted at 200 calls before Phase C, which is why several gaps in Section 7 stayed open.</p>
+<h2 class="sec"><span class="sec-tick"></span>9. Sources</h2>
+<ol class="srcs">
+<li class="src"><span class="src-n">1</span><span class="src-b">
+      <span class="src-t">DIANA Challenge CHA-26-04 Human Resilience and Biotechnologies (Cloudflare-blocked on retrieval). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.diana.nato.int/resources/site1/general/challenges/docs/cha-26-04-human-resilience-and-biotechnologies.pdf">www.diana.nato.int/resources/site1/general/challenges/docs/cha-26-04-human-resilience-and-biotechnologies.pdf</a>
+    </span></li>
+<li class="src"><span class="src-n">2</span><span class="src-b">
+      <span class="src-t">Brave1 defence tech cluster, funding categories. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://brave1.gov.ua/en">brave1.gov.ua/en</a>
+    </span></li>
+<li class="src"><span class="src-n">4</span><span class="src-b">
+      <span class="src-t">EDF Work Programme 2026, C(2025) 8719 final, 17 December 2025. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://defence-industry-space.ec.europa.eu/document/download/3991ef09-1f18-44d1-baf5-dbe60bbb928a_en?filename=EDF+Work+Programme+2026.pdf">defence-industry-space.ec.europa.eu/document/download/3991ef09-1f18-44d1-baf5-dbe60bbb928a_en?filename=EDF+Work+Programme+2026.pdf</a>
+    </span></li>
+<li class="src"><span class="src-n">5</span><span class="src-b">
+      <span class="src-t">Cohort, EUDIS Business Accelerator (full roster, three cohorts). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://eudis-business-accelerator.eu/cohort">eudis-business-accelerator.eu/cohort</a>
+    </span></li>
+<li class="src"><span class="src-n">6</span><span class="src-b">
+      <span class="src-t">DG HERA work plan for 2026 (Annex, C(2026) 4300). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://health.ec.europa.eu/document/download/b5344ff0-7917-47b8-812c-3ae1de489a2c_en?filename=hera_c_2026_4300_annex_en.pdf">health.ec.europa.eu/document/download/b5344ff0-7917-47b8-812c-3ae1de489a2c_en?filename=hera_c_2026_4300_annex_en.pdf</a>
+    </span></li>
+<li class="src"><span class="src-n">7</span><span class="src-b">
+      <span class="src-t">EUDIS Business Accelerator, Technology Themes. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://eudis-business-accelerator.eu/technology-themes">eudis-business-accelerator.eu/technology-themes</a>
+    </span></li>
+<li class="src"><span class="src-n">8</span><span class="src-b">
+      <span class="src-t">NATO DIANA Announces Largest-Ever Cohort: 150 Innovators Across Ten Challenge Areas for 2026. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.diana.nato.int/connect/nato-diana-announces-largestever-cohort-150-innovators-selected-across-ten-challenge-areas-for-2026-challenge-programme.html">www.diana.nato.int/connect/nato-diana-announces-largestever-cohort-150-innovators-selected-across-ten-challenge-areas-for-2026-challenge-programme.html</a>
+    </span></li>
+<li class="src"><span class="src-n">9</span><span class="src-b">
+      <span class="src-t">iMEDCAP, Selected Projects European Defence Fund 2022 factsheet. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://defence-industry-space.ec.europa.eu/system/files/2023-06/iMEDCAP-Factsheet_EDF22.pdf">defence-industry-space.ec.europa.eu/system/files/2023-06/iMEDCAP-Factsheet_EDF22.pdf</a>
+    </span></li>
+<li class="src"><span class="src-n">10</span><span class="src-b">
+      <span class="src-t">Medical Technology Enterprise Consortium (MTEC). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://mtec-sc.org/">mtec-sc.org/</a>
+    </span></li>
+<li class="src"><span class="src-n">11</span><span class="src-b">
+      <span class="src-t">NATO's largest medical exercise strengthens Allied medical readiness (Vigorous Warrior 2026). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.nato.int/en/news-and-events/articles/news/2026/06/25/natos-largest-medical-exercise-strengthens-allied-medical-readiness.html">www.nato.int/en/news-and-events/articles/news/2026/06/25/natos-largest-medical-exercise-strengthens-allied-medical-readiness.html</a>
+    </span></li>
+<li class="src"><span class="src-n">12</span><span class="src-b">
+      <span class="src-t">The European Innovation Council opens to defence and dual-use technologies, 17 June 2026. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://eic.ec.europa.eu/news/european-innovation-council-opens-defence-and-dual-use-technologies-2026-06-17_en">eic.ec.europa.eu/news/european-innovation-council-opens-defence-and-dual-use-technologies-2026-06-17_en</a>
+    </span></li>
+<li class="src"><span class="src-n">15</span><span class="src-b">
+      <span class="src-t">NATO COMEDS 65th Plenary: Medical readiness (Skopje, 1 to 4 June 2026). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.nato.int/en/news-and-events/articles/news/2026/06/05/nato-comeds-65th-plenary-medical-readiness-an-important-part-of-national-and-collective-security">www.nato.int/en/news-and-events/articles/news/2026/06/05/nato-comeds-65th-plenary-medical-readiness-an-important-part-of-national-and-collective-security</a>
+    </span></li>
+<li class="src"><span class="src-n">16</span><span class="src-b">
+      <span class="src-t">NATO Innovation Fund leads USD 35m Series A in Portal Biotech. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.nif.fund/news/nato-innovation-fund-leads-35-million-series-a-in-portal-biotech-alongside-earlybird-to-deliver-worlds-first-full-length-single-molecule-protein-sequencer/">www.nif.fund/news/nato-innovation-fund-leads-35-million-series-a-in-portal-biotech-alongside-earlybird-to-deliver-worlds-first-full-length-single-molecule-protein-sequencer/</a>
+    </span></li>
+<li class="src"><span class="src-n">17</span><span class="src-b">
+      <span class="src-t">The future of tactical casualty evacuation (iMEDCAP), Bundeswehr. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.bundeswehr.de/en/organization/joint-support-command/the-future-of-tactical-casualty-evacuation-6116904">www.bundeswehr.de/en/organization/joint-support-command/the-future-of-tactical-casualty-evacuation-6116904</a>
+    </span></li>
+<li class="src"><span class="src-n">18</span><span class="src-b">
+      <span class="src-t">Article 346 and the qualified application of EU law to defence (EUISS). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.iss.europa.eu/publications/briefs/article-346-and-qualified-application-eu-law-defence">www.iss.europa.eu/publications/briefs/article-346-and-qualified-application-eu-law-defence</a>
+    </span></li>
+<li class="src"><span class="src-n">19</span><span class="src-b">
+      <span class="src-t">Bundeswehr Cyber Innovation Hub (CIHBw). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.cyberinnovationhub.de/en">www.cyberinnovationhub.de/en</a>
+    </span></li>
+<li class="src"><span class="src-n">20</span><span class="src-b">
+      <span class="src-t">Danish soldiers to receive mental training (University of Copenhagen, 2026). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://psychology.ku.dk/news/2026/danish-soldiers-to-receive-mental-training">psychology.ku.dk/news/2026/danish-soldiers-to-receive-mental-training</a>
+    </span></li>
+<li class="src"><span class="src-n">21</span><span class="src-b">
+      <span class="src-t">EIC STEP Scale Up Defence call. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://eic.ec.europa.eu/eic-funding-opportunities/eic-step-scale-defence_en">eic.ec.europa.eu/eic-funding-opportunities/eic-step-scale-defence_en</a>
+    </span></li>
+<li class="src"><span class="src-n">22</span><span class="src-b">
+      <span class="src-t">EU Medical Countermeasures Strategy, COM(2025) 529 final, 9 July 2025. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://health.ec.europa.eu/document/download/1be3e462-bd50-4c64-b147-add9d1d5a580_en?filename=com_2025-529-1_en.pdf">health.ec.europa.eu/document/download/1be3e462-bd50-4c64-b147-add9d1d5a580_en?filename=com_2025-529-1_en.pdf</a>
+    </span></li>
+<li class="src"><span class="src-n">25</span><span class="src-b">
+      <span class="src-t">Germany: Act to Modernize Military Service Enters into Force. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.loc.gov/item/global-legal-monitor/2026-01-28/germany-act-to-modernize-military-service-enters-into-force/">www.loc.gov/item/global-legal-monitor/2026-01-28/germany-act-to-modernize-military-service-enters-into-force/</a>
+    </span></li>
+<li class="src"><span class="src-n">26</span><span class="src-b">
+      <span class="src-t">Hub for EU Defence Innovation (HEDI) factsheet. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://eda.europa.eu/docs/default-source/brochures/hedi-factsheet-(final).pdf">eda.europa.eu/docs/default-source/brochures/hedi-factsheet-(final).pdf</a>
+    </span></li>
+<li class="src"><span class="src-n">29</span><span class="src-b">
+      <span class="src-t">NATO Blood Panel Members Urge Civilian Systems to Prepare for Transfusion Demand Surges. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.aabb.org/news-resources/news/article/2026/03/11/nato-blood-panel-members-urge-civilian-systems-to-prepare-for-transfusion-demand-surges">www.aabb.org/news-resources/news/article/2026/03/11/nato-blood-panel-members-urge-civilian-systems-to-prepare-for-transfusion-demand-surges</a>
+    </span></li>
+<li class="src"><span class="src-n">30</span><span class="src-b">
+      <span class="src-t">NATO DIANA's Estonian Accelerator: Tallinn and Tartu. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.diana.nato.int/connect/nato-dianas-estonian-accelerator-a-hub-for-defence-innovation-in-tallinn-and-tartu.html">www.diana.nato.int/connect/nato-dianas-estonian-accelerator-a-hub-for-defence-innovation-in-tallinn-and-tartu.html</a>
+    </span></li>
+<li class="src"><span class="src-n">36</span><span class="src-b">
+      <span class="src-t">Two Finnish companies selected to join NATO's DIANA challenge programme. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://defmin.fi/en/-/two-finnish-companies-selected-to-join-nato-s-diana-challenge-programme">defmin.fi/en/-/two-finnish-companies-selected-to-join-nato-s-diana-challenge-programme</a>
+    </span></li>
+<li class="src"><span class="src-n">40</span><span class="src-b">
+      <span class="src-t">ASTRID 2026, Agence de l'innovation de défense and ANR dual-use research call. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.defense.gouv.fr/aid/actualites/astrid-2026-accompagnement-specifique-travaux-recherches-dinteret-defense">www.defense.gouv.fr/aid/actualites/astrid-2026-accompagnement-specifique-travaux-recherches-dinteret-defense</a>
+    </span></li>
+<li class="src"><span class="src-n">42</span><span class="src-b">
+      <span class="src-t">Call to enhance civilian and military blood preparedness, The Lancet, March 2026. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26)00322-3/fulltext">www.thelancet.com/journals/lancet/article/PIIS0140-6736(26)00322-3/fulltext</a>
+    </span></li>
+<li class="src"><span class="src-n">44</span><span class="src-b">
+      <span class="src-t">Commission consultation on Regulation (EU) 2021/821 dual-use export control (resolves to a generic Better Regulation landing page at verification, 16 September 2026; the consultation window is not stated there). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://ec.europa.eu/info/law/better-regulation">ec.europa.eu/info/law/better-regulation</a>
+    </span></li>
+<li class="src"><span class="src-n">49</span><span class="src-b">
+      <span class="src-t">Defence Readiness (Simplification) Omnibus. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://defence-industry-space.ec.europa.eu/document/download/b2bcc9a0-5259-4543-9e1c-3af1dde8fbec_en">defence-industry-space.ec.europa.eu/document/download/b2bcc9a0-5259-4543-9e1c-3af1dde8fbec_en</a>
+    </span></li>
+<li class="src"><span class="src-n">50</span><span class="src-b">
+      <span class="src-t">Delft kloppend hart van Nederlandse defensie-innovatie (MIND Tech Centre). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.defensie.nl/actueel/nieuws/2026/07/01/delft-kloppend-hart-van-nederlandse-defensie-innovatie">www.defensie.nl/actueel/nieuws/2026/07/01/delft-kloppend-hart-van-nederlandse-defensie-innovatie</a>
+    </span></li>
+<li class="src"><span class="src-n">54</span><span class="src-b">
+      <span class="src-t">DIANA Network, Accelerator Sites 2026. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.diana.nato.int/resources/site1/general/accprog/accelerator-sites-2026.pdf">www.diana.nato.int/resources/site1/general/accprog/accelerator-sites-2026.pdf</a>
+    </span></li>
+<li class="src"><span class="src-n">60</span><span class="src-b">
+      <span class="src-t">EDF Indicative Multiannual Perspective 2026-2027. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://defence-industry-space.ec.europa.eu/document/download/7a84b97c-5258-40a7-ac8e-460bcd87bbb7_en">defence-industry-space.ec.europa.eu/document/download/7a84b97c-5258-40a7-ac8e-460bcd87bbb7_en</a>
+    </span></li>
+<li class="src"><span class="src-n">74</span><span class="src-b">
+      <span class="src-t">Innovation Fund Denmark, defence and security technology (the original announcement URL at innovationsfonden.dk was dead at verification, 16 September 2026; the fund has rebranded and the live equivalent page is cited here, and it names no medical track). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://danmarksinnovationsfond.dk/en/defence-and-security-technology/">danmarksinnovationsfond.dk/en/defence-and-security-technology/</a>
+    </span></li>
+<li class="src"><span class="src-n">76</span><span class="src-b">
+      <span class="src-t">Innovationszentrum der Bundeswehr (InnoZBw). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.bundeswehr.de/de/organisation/ausruestung-baainbw/struktur/innozbw">www.bundeswehr.de/de/organisation/ausruestung-baainbw/struktur/innozbw</a>
+    </span></li>
+<li class="src"><span class="src-n">81</span><span class="src-b">
+      <span class="src-t">MoD Codifies Upgraded Evacuation Robot Vepr. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.zbroya.gov.ua/en/news/minoborony-kodyfikuvalo-modernizovanyi-robot-evakuator-vepr">www.zbroya.gov.ua/en/news/minoborony-kodyfikuvalo-modernizovanyi-robot-evakuator-vepr</a>
+    </span></li>
+<li class="src"><span class="src-n">87</span><span class="src-b">
+      <span class="src-t">NATO Medical Innovation Workshop 2026 (Budapest, 1 to 3 September 2026). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.coemed.org/news-and-events/join-the-nato-medical-innovation-workshop-2026">www.coemed.org/news-and-events/join-the-nato-medical-innovation-workshop-2026</a>
+    </span></li>
+<li class="src"><span class="src-n">89</span><span class="src-b">
+      <span class="src-t">NATO MILMED COE (Centre of Excellence for Military Medicine, Budapest). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://www.coemed.org/">www.coemed.org/</a>
+    </span></li>
+<li class="src"><span class="src-n">95</span><span class="src-b">
+      <span class="src-t">New EUDIS Defence Business Accelerator Call (Autumn 2026 cohort). <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://defence-industry-space.ec.europa.eu/new-eudis-defence-business-accelerator-call-2026-04-16_en">defence-industry-space.ec.europa.eu/new-eudis-defence-business-accelerator-call-2026-04-16_en</a>
+    </span></li>
+<li class="src"><span class="src-n">103</span><span class="src-b">
+      <span class="src-t">SepTech, Sepsis Early Prediction Technology, CORDIS project record. <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://cordis.europa.eu/project/id/101289496">cordis.europa.eu/project/id/101289496</a>
+    </span></li>
+<li class="src"><span class="src-n">110</span><span class="src-b">
+      <span class="src-t">What is the EIC STEP Scale Up scheme? <span class="chip chip-high">HIGH</span></span>
+      <a class="src-u" href="https://eic.ec.europa.eu/eic-funding-opportunities/step-scale_en">eic.ec.europa.eu/eic-funding-opportunities/step-scale_en</a>
+    </span></li>
+<li class="src"><span class="src-n">112</span><span class="src-b">
+      <span class="src-t">Bundeswehr Selects AVILUS for Uncrewed Airborne Patient Transport Project. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.unmannedsystemstechnology.com/2026/07/bundeswehr-selects-avilus-for-uncrewed-airborne-patient-transport-project/">www.unmannedsystemstechnology.com/2026/07/bundeswehr-selects-avilus-for-uncrewed-airborne-patient-transport-project/</a>
+    </span></li>
+<li class="src"><span class="src-n">113</span><span class="src-b">
+      <span class="src-t">NATO Defence Innovation Accelerator (DIANA) 2027 cohort, Innovate UK Business Connect. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://iuk-business-connect.org.uk/opportunities/nato-defence-innovation-accelerator-diana-2027-cohort">iuk-business-connect.org.uk/opportunities/nato-defence-innovation-accelerator-diana-2027-cohort</a>
+    </span></li>
+<li class="src"><span class="src-n">114</span><span class="src-b">
+      <span class="src-t">German Grille X4 rescue drone makes maiden flight (Janes). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.janes.com/defence-intelligence-insights/defence-news/air/german-grille-x4-rescue-drone-makes-maiden-flight">www.janes.com/defence-intelligence-insights/defence-news/air/german-grille-x4-rescue-drone-makes-maiden-flight</a>
+    </span></li>
+<li class="src"><span class="src-n">115</span><span class="src-b">
+      <span class="src-t">NATO Defence Innovation Accelerator (DIANA) 2026 cohort, Innovate UK Business Connect. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://iuk-business-connect.org.uk/opportunities/nato-defence-innovation-accelerator-diana-2026-cohort">iuk-business-connect.org.uk/opportunities/nato-defence-innovation-accelerator-diana-2026-cohort</a>
+    </span></li>
+<li class="src"><span class="src-n">116</span><span class="src-b">
+      <span class="src-t">Dutch VR startup BRAVR raises EUR 130k for mental resilience training. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.eu-startups.com/2025/08/dutch-vr-startup-bravr-raises-e130k-for-mental-resilience-training-across-defense-and-civilian-sectors/">www.eu-startups.com/2025/08/dutch-vr-startup-bravr-raises-e130k-for-mental-resilience-training-across-defense-and-civilian-sectors/</a>
+    </span></li>
+<li class="src"><span class="src-n">117</span><span class="src-b">
+      <span class="src-t">EUDIS Business Accelerator 2026, EUR 120k seed vouchers. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.munich-startup.de/en/120961/defensetech-eudis-business-accelerator-2026">www.munich-startup.de/en/120961/defensetech-eudis-business-accelerator-2026</a>
+    </span></li>
+<li class="src"><span class="src-n">118</span><span class="src-b">
+      <span class="src-t">EUROMIL 2026 Survey: Recruitment and Retention Remain the Greatest Personnel Challenge. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://euromil.org/recruitment-and-retention-remain-the-greatest-personnel-challenge-for-european-armed-forces/">euromil.org/recruitment-and-retention-remain-the-greatest-personnel-challenge-for-european-armed-forces/</a>
+    </span></li>
+<li class="src"><span class="src-n">119</span><span class="src-b">
+      <span class="src-t">European Defence Fund (EDF) 2026 open until 29 September. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.hezelburcht.com/en/news/european-defence-fund-edf-2026-open-for-applications-until-29-september">www.hezelburcht.com/en/news/european-defence-fund-edf-2026-open-for-applications-until-29-september</a>
+    </span></li>
+<li class="src"><span class="src-n">120</span><span class="src-b">
+      <span class="src-t">European Health Data Space Regulation Published in the EU Official Journal. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.arnoldporter.com/en/perspectives/advisories/2025/03/european-health-data-space-regulation-published">www.arnoldporter.com/en/perspectives/advisories/2025/03/european-health-data-space-regulation-published</a>
+    </span></li>
+<li class="src"><span class="src-n">121</span><span class="src-b">
+      <span class="src-t">France preparing hospitals to care for war-wounded soldiers by March 2026. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.euronews.com/health/2025/09/02/france-preparing-hospitals-to-care-for-war-wounded-soldiers-by-march-2026">www.euronews.com/health/2025/09/02/france-preparing-hospitals-to-care-for-war-wounded-soldiers-by-march-2026</a>
+    </span></li>
+<li class="src"><span class="src-n">122</span><span class="src-b">
+      <span class="src-t">Medical Device Registration in Europe 2026 (source of the refusal count dropped from this report). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://zamann-pharma.com/2026/08/04/medical-device-registration-in-europe-in-year-eu-mdr-ce-marking-eudamed/">zamann-pharma.com/2026/08/04/medical-device-registration-in-europe-in-year-eu-mdr-ce-marking-eudamed/</a>
+    </span></li>
+<li class="src"><span class="src-n">125</span><span class="src-b">
+      <span class="src-t">NSPA highlights medical capabilities at 65th NATO COMEDS Plenary (dried plasma). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.globalsecurity.org/military/library/news/2026/06/mil-260608-nato-nspa01.htm">www.globalsecurity.org/military/library/news/2026/06/mil-260608-nato-nspa01.htm</a>
+    </span></li>
+<li class="src"><span class="src-n">127</span><span class="src-b">
+      <span class="src-t">Ukraine Uses Ground Robots for 100,000 Frontline Missions. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://thedefensepost.com/2026/08/25/ukraine-ground-robots-missions">thedefensepost.com/2026/08/25/ukraine-ground-robots-missions</a>
+    </span></li>
+<li class="src"><span class="src-n">128</span><span class="src-b">
+      <span class="src-t">USIL Therapeutics Lands EUR 5.2M EU Grant (Cloudflare-blocked at verification, 16 September 2026; the 93-out-of-100 score could not be re-confirmed). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.siliconluxembourg.lu/usil-therapeutics-eu-grant-radiation/">www.siliconluxembourg.lu/usil-therapeutics-eu-grant-radiation/</a>
+    </span></li>
+<li class="src"><span class="src-n">130</span><span class="src-b">
+      <span class="src-t">ARX Robotics and Roboneers Launch Joint Venture (ARX Industries). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://techukraine.org/2026/07/07/scaling-up-the-frontline-arx-robotics-and-roboneers-launch-joint-venture-to-deliver-the-future-of-defence/">techukraine.org/2026/07/07/scaling-up-the-frontline-arx-robotics-and-roboneers-launch-joint-venture-to-deliver-the-future-of-defence/</a>
+    </span></li>
+<li class="src"><span class="src-n">136</span><span class="src-b">
+      <span class="src-t">Contract to modernise and digitise the Armed Forces' medical record (TPP, Programme Cortisone). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.defenceonline.co.uk/2026/01/30/contract-to-modernise-and-digitise-the-armed-forces-medical-record/">www.defenceonline.co.uk/2026/01/30/contract-to-modernise-and-digitise-the-armed-forces-medical-record/</a>
+    </span></li>
+<li class="src"><span class="src-n">141</span><span class="src-b">
+      <span class="src-t">Defence Tech Denmark (DKK 200m, 72 companies). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://defencetechdenmark.com/">defencetechdenmark.com/</a>
+    </span></li>
+<li class="src"><span class="src-n">143</span><span class="src-b">
+      <span class="src-t">Dutch Defence Ministry to Buy Train Carriages and Convert Them into Mobile Hospitals. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.dutchbrief.com/p/dutch-defence-ministry-to-buy-train-carriages-and-convert-them-into-mobile-hospitals">www.dutchbrief.com/p/dutch-defence-ministry-to-buy-train-carriages-and-convert-them-into-mobile-hospitals</a>
+    </span></li>
+<li class="src"><span class="src-n">144</span><span class="src-b">
+      <span class="src-t">Dutch military and hospitals prepare for potential war, expand medical capacity. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://nltimes.nl/2025/10/31/dutch-military-hospitals-prepare-potential-war-expand-medical-capacity">nltimes.nl/2025/10/31/dutch-military-hospitals-prepare-potential-war-expand-medical-capacity</a>
+    </span></li>
+<li class="src"><span class="src-n">150</span><span class="src-b">
+      <span class="src-t">EU public consultation on dual-use export controls, evaluation of Regulation (EU) 2021/821 (states an evaluation report due between 10 September 2026 and 10 September 2028 and Q4 2026 completion, no consultation window). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.regulatory-compliance.eu/2026/07/24/eu-public-consultation-on-dual-use-export-controls-evaluation/">www.regulatory-compliance.eu/2026/07/24/eu-public-consultation-on-dual-use-export-controls-evaluation/</a>
+    </span></li>
+<li class="src"><span class="src-n">151</span><span class="src-b">
+      <span class="src-t">Europe's defence and resilience startups hit $8.7B in 2025. Top deals so far in 2026. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.vestbee.com/insights/articles/europ-s-defence-top-deals-in-early-2026">www.vestbee.com/insights/articles/europ-s-defence-top-deals-in-early-2026</a>
+    </span></li>
+<li class="src"><span class="src-n">154</span><span class="src-b">
+      <span class="src-t">European Project Aims to Develop Electrochemiluminescent POC Test for Sepsis, AMR (Bionys, SepTech). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.360dx.com/infectious-disease/european-project-aims-develop-electrochemiluminescent-poc-test-sepsis-amr">www.360dx.com/infectious-disease/european-project-aims-develop-electrochemiluminescent-poc-test-sepsis-amr</a>
+    </span></li>
+<li class="src"><span class="src-n">157</span><span class="src-b">
+      <span class="src-t">From medical delivery to battlefield recon: Wingcopter launches the W262. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.thedronegirl.com/2026/09/15/wingcopter-262-defense-reconnaissance-drone-pivot/">www.thedronegirl.com/2026/09/15/wingcopter-262-defense-reconnaissance-drone-pivot/</a>
+    </span></li>
+<li class="src"><span class="src-n">158</span><span class="src-b">
+      <span class="src-t">Funding Radar: NATO DIANA announces 2027 challenge topics. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://sciencebusiness.net/news/r-d-funding/research-infrastructures/funding-radar-nato-diana-announces-2027-challenge-topics">sciencebusiness.net/news/r-d-funding/research-infrastructures/funding-radar-nato-diana-announces-2027-challenge-topics</a>
+    </span></li>
+<li class="src"><span class="src-n">160</span><span class="src-b">
+      <span class="src-t">Germany Readies to Treat 1,000 Daily Casualties if NATO-Russia War Erupts. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://thedefensepost.com/2025/09/23/germany-treat-war-casualties">thedefensepost.com/2025/09/23/germany-treat-war-casualties</a>
+    </span></li>
+<li class="src"><span class="src-n">166</span><span class="src-b">
+      <span class="src-t">Medtech On The Battlefield: Aristeia Takes Mechanical Tourniquet To Ukraine. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://insights.citeline.com/medtech-insight/business/r-and-d/medtech-on-the-battlefield-aristeia-takes-mechanical-tourniquet-to-ukraine/">insights.citeline.com/medtech-insight/business/r-and-d/medtech-on-the-battlefield-aristeia-takes-mechanical-tourniquet-to-ukraine/</a>
+    </span></li>
+<li class="src"><span class="src-n">167</span><span class="src-b">
+      <span class="src-t">Meet the Norwegian startup developing a new generation of emergency tourniquets (Aristeia). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://tech.eu/2026/06/19/meet-the-norwegian-startup-developing-a-new-generation-of-emergency-tourniquets/">tech.eu/2026/06/19/meet-the-norwegian-startup-developing-a-new-generation-of-emergency-tourniquets/</a>
+    </span></li>
+<li class="src"><span class="src-n">168</span><span class="src-b">
+      <span class="src-t">Meet the startup digitising battlefield medicine (The AO). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://tech.eu/2026/07/08/meet-the-startup-digitising-battlefield-medicine/">tech.eu/2026/07/08/meet-the-startup-digitising-battlefield-medicine/</a>
+    </span></li>
+<li class="src"><span class="src-n">169</span><span class="src-b">
+      <span class="src-t">MoD and MRC Launch GBP 50 Million Research Programme for Advanced Blood Products. <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://www.defenceonline.co.uk/2025/11/18/mod-and-mrc-launch-50-million-research-programme-for-advanced-blood-products/">www.defenceonline.co.uk/2025/11/18/mod-and-mrc-launch-50-million-research-programme-for-advanced-blood-products/</a>
+    </span></li>
+<li class="src"><span class="src-n">176</span><span class="src-b">
+      <span class="src-t">NATO Tests Flowcopter MEDEVAC Drone In Poland Exercise (Sabre Strike 2026). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://dronexl.co/2026/05/12/nato-flowcopter-medevac-drone-poland">dronexl.co/2026/05/12/nato-flowcopter-medevac-drone-poland</a>
+    </span></li>
+<li class="src"><span class="src-n">179</span><span class="src-b">
+      <span class="src-t">PGZ Start-up, Innovation for Poland's security (17 June 2026). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://milmag.pl/en/pgz-start-up-innovation-for-security-wat-and-pgz-open-the-door-to-future-technologies">milmag.pl/en/pgz-start-up-innovation-for-security-wat-and-pgz-open-the-door-to-future-technologies</a>
+    </span></li>
+<li class="src"><span class="src-n">188</span><span class="src-b">
+      <span class="src-t">The Heavyweights of the Last Mile: Ukraine's New Generation of Combat UGVs (Tencore TerMIT). <span class="chip chip-medium">MEDIUM</span></span>
+      <a class="src-u" href="https://techukraine.org/2026/03/24/the-heavyweights-of-the-last-mile-ukraines-new-generation-of-combat-ugvs/">techukraine.org/2026/03/24/the-heavyweights-of-the-last-mile-ukraines-new-generation-of-combat-ugvs/</a>
+    </span></li>
+<li class="src"><span class="src-n">194</span><span class="src-b">
+      <span class="src-t">Avivo selected to the NATO DIANA 2026 Challenge Programme Cohort. <span class="chip chip-low">LOW</span></span>
+      <a class="src-u" href="https://avivobio.com/announcements/avivo-has-been-selected-to-the-nato-diana-2026-challenge-programme-cohort">avivobio.com/announcements/avivo-has-been-selected-to-the-nato-diana-2026-challenge-programme-cohort</a>
+    </span></li>
+<li class="src"><span class="src-n">195</span><span class="src-b">
+      <span class="src-t">Avy, Medical Drone Delivery. <span class="chip chip-low">LOW</span></span>
+      <a class="src-u" href="https://avy.eu/industry/medical">avy.eu/industry/medical</a>
+    </span></li>
+<li class="src"><span class="src-n">197</span><span class="src-b">
+      <span class="src-t">Milrem Robotics (THeMIS, ARCOS). <span class="chip chip-low">LOW</span></span>
+      <a class="src-u" href="https://milremrobotics.com/">milremrobotics.com/</a>
+    </span></li>
+</ol>
+</div>
+<p class="screen-foot">Health &times; Defence in Europe, 2026 &middot; AI Enablement Academy</p>
+</body>
+</html>
